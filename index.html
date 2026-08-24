@@ -45,6 +45,17 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,248,252,.92);backdrop-
 .nav-cta{background:var(--brand-blue);color:#fff !important;padding:.55rem 1.6rem;border-radius:6px;font-weight:600;border-bottom:none !important;white-space:nowrap}
 .nav-cta:hover{background:var(--bright-blue);color:#fff}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:6px;padding:.4rem .6rem;font-size:1.1rem;cursor:pointer;color:var(--deep-blue)}
+.partner-form{display:grid;gap:1rem;max-width:760px}
+.partner-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.partner-field{display:grid;gap:.4rem}
+.partner-field label{font-size:.9rem;font-weight:600;color:var(--deep-blue)}
+.partner-field input,.partner-field textarea{width:100%;padding:.75rem .85rem;border:1px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font:inherit}
+.partner-field textarea{min-height:140px;resize:vertical}
+.partner-field input:focus,.partner-field textarea:focus{outline:2px solid rgba(40,14,179,.24);border-color:var(--brand-blue)}
+.partner-form .hp{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+.form-status{min-height:1.5em;font-size:.95rem;color:var(--muted)}
+.form-status.success{color:#17633c}
+.form-status.error{color:#a12020}
 
 /* ---------- Layout primitives ---------- */
 .page{display:none}
@@ -337,7 +348,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
   .foot-inner{grid-template-columns:1fr 1fr}
 }
 @media(max-width:680px){
-  .grid-2,.grid-3,.tiers,.quotes,.feat-list{grid-template-columns:1fr}
+  .grid-2,.grid-3,.tiers,.quotes,.feat-list,.partner-form-grid{grid-template-columns:1fr}
   .menu-btn{display:block}
   .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:1rem 1.5rem;gap:.4rem}
   .nav-links.open{display:flex}
@@ -374,7 +385,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
           </div>
         </div>
       </div>
-      <a href="#partners" data-page="partners">Sponsorships &amp; Partnerships</a>
+      <a class="nav-cta" href="#partners" data-page="partners">Partner with us</a>
       <a href="#about" data-page="about">About</a>
     </div>
   </div>
@@ -842,39 +853,38 @@ audio{width:100%;height:38px;margin-top:.7rem}
 </section>
 
 
-<!-- ================= SPONSORSHIPS & PARTNERSHIPS ================= -->
+<!-- ================= PARTNERSHIPS ================= -->
 <section class="page" id="page-partners">
   <div class="hero page-hero">
     <div class="shape dot-grid" style="right:6%;top:22%"></div>
     <div class="wrap">
-      <span class="label">Sponsorships &amp; Partnerships</span>
-      <h1>Reach the people building Edtech's future.</h1>
-      <p class="kicker">Our audience of 40,000+ includes founders at every stage, partners at leading Edtech investment firms, and operators at the most influential companies in the space. Opportunities built around your goals, not a rate card.</p>
+      <span class="label">Partnerships</span>
+      <h1>Help shape the conversations that move Edtech forward.</h1>
+      <p class="kicker">Edtech Insiders is the intelligence network for the people building, funding, and shaping education technology. Through trusted media, original research, and unmatched access, we help the sector see what matters — and connect with the people moving it forward.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="mailto:info@edtechinsiders.org">Download our media kit →</a>
-        <a class="btn btn-secondary" href="mailto:info@edtechinsiders.org">Get in touch →</a>
+        <a class="btn btn-primary" href="#partner-form">Start a partnership conversation →</a>
       </div>
     </div>
   </div>
 
   <div class="section tight">
     <div class="wrap">
-      <span class="label">Ways to work with us</span>
+      <span class="label">Built around the opportunity</span>
       <div class="grid-3">
         <div class="card">
-          <h3>Podcast &amp; Newsletter</h3>
-          <p>Sponsorship across 400+ episodes and the bi-weekly briefing read by decision-makers at the world's leading Edtech companies and investment firms.</p>
-          <a class="card-cta" href="mailto:info@edtechinsiders.org">Ask about media sponsorship →</a>
+          <h3>Media &amp; Thought Leadership</h3>
+          <p>Bring a relevant idea, product, or perspective to a deeply engaged Edtech audience through podcast, newsletter, and digital collaborations designed around your goals.</p>
+          <a class="card-cta" href="#partner-form">Discuss a media partnership →</a>
         </div>
         <div class="card">
-          <h3>Events</h3>
-          <p>Event sponsorship puts you in front of the most influential people in Edtech — in a setting designed for real conversation.</p>
-          <a class="card-cta" href="mailto:info@edtechinsiders.org">Ask about event sponsorship →</a>
+          <h3>Events &amp; Experiences</h3>
+          <p>Create meaningful in-person and virtual connections with the people shaping Edtech. Our gatherings bring together high-signal communities at leading industry moments, including sold-out events with waitlists.</p>
+          <a class="card-cta" href="#partner-form">Discuss an event partnership →</a>
         </div>
         <div class="card">
-          <h3>Research</h3>
-          <p>Edtech Insiders partners with foundations, companies, and institutions to produce original research on the education technology landscape.</p>
-          <a class="card-cta" href="mailto:info@edtechinsiders.org">Ask about funding research →</a>
+          <h3>Research &amp; Sector Convenings</h3>
+          <p>Partner with Edtech Insiders on the questions that matter most: public field-building research, bespoke strategic insight, and convenings that bring the sector together around a shared challenge.</p>
+          <a class="card-cta" href="#partner-form">Explore research collaboration →</a>
         </div>
       </div>
     </div>
@@ -884,11 +894,32 @@ audio{width:100%;height:38px;margin-top:.7rem}
     <div class="shape dot-grid" style="right:2%;bottom:8%;opacity:.25"></div>
     <div class="section tight">
       <div class="wrap">
-        <span class="label on-dark">Who you'll reach</span>
-        <h2>40,000+ founders, investors, and educators.</h2>
-        <p>Read and listened to by leaders at Google, OpenAI, Microsoft, GSV Ventures, Reach Capital, and Owl Ventures.</p>
-        <div class="btn-row"><a class="btn btn-light" href="mailto:info@edtechinsiders.org">Get in touch →</a></div>
+        <span class="label on-dark">Who you’ll reach</span>
+        <h2>The people making decisions across Edtech.</h2>
+        <p>Our community includes founders and startup leaders, investors, educators, institutional leaders, product teams, strategists, and policy professionals. They come to Edtech Insiders for context, connection, and a clearer view of where the sector is heading.</p>
       </div>
+    </div>
+  </div>
+
+  <div class="section" id="partner-form">
+    <div class="wrap">
+      <span class="label">Start the conversation</span>
+      <h2>Tell us what you’re working toward.</h2>
+      <p class="kicker" style="margin:1rem 0 2rem">Share a little about your organization and what you hope to accomplish. Sharon and the Edtech Insiders team will follow up to explore the right collaboration.</p>
+      <form class="partner-form" data-partnership-form>
+        <div class="partner-form-grid">
+          <div class="partner-field"><label for="partner-name">Name</label><input id="partner-name" name="name" autocomplete="name" required></div>
+          <div class="partner-field"><label for="partner-email">Email</label><input id="partner-email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="partner-form-grid">
+          <div class="partner-field"><label for="partner-company">Company</label><input id="partner-company" name="company" autocomplete="organization" required></div>
+          <div class="partner-field"><label for="partner-role">Role at company <span style="font-weight:400">(optional)</span></label><input id="partner-role" name="role" autocomplete="organization-title"></div>
+        </div>
+        <div class="partner-field"><label for="partner-interest">What kind of partnership are you looking for?</label><textarea id="partner-interest" name="interest" required></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="partner-website">Website</label><input id="partner-website" name="website" tabindex="-1" autocomplete="off"></div>
+        <button class="btn btn-primary" type="submit">Start the conversation →</button>
+        <p class="form-status" data-form-status aria-live="polite"></p>
+      </form>
     </div>
   </div>
 </section>
@@ -1000,7 +1031,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
       <a href="#media">Media</a>
       <a href="#events">Events</a>
       <a href="#research">Research &amp; Tools</a>
-      <a href="#partners">Sponsorships &amp; Partnerships</a>
+      <a href="#partners">Partnerships</a>
       <a href="#about">About</a>
     </div>
     <div>
@@ -1141,6 +1172,34 @@ function mmFilter(q){
 mmRender(MM_CATS);
 var edd=document.getElementById('ed-date');
 if(edd)edd.textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+/* ---- Partnership inquiry form ---- */
+(function(){
+  var form=document.querySelector('[data-partnership-form]');
+  if(!form)return;
+  var status=form.querySelector('[data-form-status]');
+  var button=form.querySelector('button[type="submit"]');
+  form.addEventListener('submit',function(event){
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    var data=Object.fromEntries(new FormData(form).entries());
+    button.disabled=true;
+    button.textContent='Sending…';
+    status.className='form-status';
+    status.textContent='';
+    fetch('/api/partnership',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+      .then(function(response){if(!response.ok)throw new Error('Unable to send');return response.json();})
+      .then(function(){
+        form.reset();
+        status.className='form-status success';
+        status.textContent='Thanks for reaching out. Sharon and the Edtech Insiders team will be in touch soon.';
+      })
+      .catch(function(){
+        status.className='form-status error';
+        status.textContent='Something went wrong. Please email Sharon directly at sharon@edtechinsiders.org.';
+      })
+      .finally(function(){button.disabled=false;button.textContent='Start the conversation →';});
+  });
+})();
 </script>
 </body>
 </html>
