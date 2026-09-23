@@ -385,21 +385,6 @@ audio{width:100%;height:38px;margin-top:.7rem}
 .sub-band p{color:#C4CBE0;font-size:.98rem}
 .sub-band iframe{width:100%;max-width:460px;height:150px;border:none;border-radius:10px;background:#fff}
 @media(max-width:900px){.hero-grid,.articles,.hosts{grid-template-columns:1fr}.home-offerings{grid-template-columns:1fr 1fr}.guest-wall-grid{grid-template-columns:repeat(2,1fr)}.guest-tile{aspect-ratio:1}.press-intro{display:block}.press-intro p{margin-top:1rem}.press-grid{grid-template-columns:1fr 1fr}.press-card:nth-child(2){border-right:none}.press-card:nth-child(-n+2){border-bottom:1px solid var(--line)}.about-contact-grid{grid-template-columns:1fr}.about-contact-photo{min-height:17rem}.about-contact-copy{padding:2.7rem 2rem}}
-/* ---------- Market Map explorer ---------- */
-.mm-explorer{background:#fff;border:1px solid var(--line);border-radius:14px;padding:2rem;box-shadow:0 12px 32px rgba(21,4,64,.06)}
-.mm-search{display:flex;gap:.8rem;flex-wrap:wrap;margin-bottom:1.4rem}
-.mm-search input{flex:1;min-width:220px;padding:.85rem 1.1rem;border:1.5px solid var(--line);border-radius:8px;font-family:var(--sans);font-size:1rem}
-.mm-search input:focus{outline:none;border-color:var(--brand-blue)}
-.mm-cats{display:flex;flex-wrap:wrap;gap:.6rem}
-.mm-cat{display:inline-flex;align-items:center;gap:.45rem;background:#F2F3FB;border:1px solid var(--line);border-radius:20px;padding:.45rem 1rem;font-size:.9rem;font-weight:600;color:var(--deep-blue);transition:all .12s}
-.mm-cat:hover{background:var(--brand-blue);color:#fff;border-color:var(--brand-blue)}
-.mm-cat .mm-dot{width:8px;height:8px;border-radius:50%;background:var(--bright-blue)}
-.mm-cat:hover .mm-dot{background:#fff}
-.mm-empty{display:none;color:var(--muted);font-size:.95rem;padding:.6rem 0}
-.mm-foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;padding-top:1.3rem;border-top:1px solid var(--line)}
-.mm-stats{display:flex;gap:1.8rem}
-.mm-stat .n-big{font-family:var(--serif);font-size:1.5rem;color:var(--bright-blue);line-height:1.1}
-.mm-stat .n-label{font-size:.8rem;color:var(--muted)}
 .sub-card{background:#E9EBFF;padding:2.6rem;width:100%}
 .sub-card h2{color:var(--deep-blue) !important;margin-bottom:.6rem}
 .sub-card p{color:var(--muted) !important;margin-bottom:1.4rem}
@@ -409,28 +394,6 @@ audio{width:100%;height:38px;margin-top:.7rem}
 .sub-form input{border-color:#C9CDE8}
 
 /* ---------- Mega menu ---------- */
-.nav-mega{position:relative}
-.nav-mega>a .caret{display:inline-block;margin-left:.3rem;font-size:.7em;transition:transform .15s}
-.mega-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translateX(-50%) translateY(6px);width:640px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px rgba(21,4,64,.16);padding:1.6rem;display:grid;grid-template-columns:1.15fr .85fr;gap:1.4rem;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .15s,transform .15s;z-index:200}
-.mega-panel::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.nav-mega:hover .mega-panel,.nav-mega:focus-within .mega-panel{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.nav-mega:hover>a .caret{transform:rotate(180deg)}
-.mega-list{display:flex;flex-direction:column;gap:.35rem}
-.mega-item{display:flex;gap:.85rem;align-items:flex-start;padding:.7rem .8rem;border-radius:10px;border-bottom:none !important}
-.mega-item:hover{background:#F2F3FB}
-.mega-item svg{width:22px;height:22px;flex-shrink:0;stroke:var(--brand-blue);margin-top:.15rem}
-.mega-item .mi-title{font-weight:600;font-size:.95rem;color:var(--deep-blue);line-height:1.3}
-.mega-item .mi-desc{font-size:.82rem;color:var(--muted);font-weight:400;line-height:1.45;margin-top:.1rem}
-.mega-side{background:var(--navy);border-radius:10px;padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
-.mega-side .ms-label{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#9DA8FF}
-.mega-side .ms-title{font-family:var(--serif);font-size:1.15rem;color:#fff;margin:.4rem 0 .5rem;line-height:1.3}
-.mega-side p{font-size:.82rem;color:#C4CBE0;line-height:1.5}
-.mega-side a{color:#fff;font-weight:600;font-size:.88rem;margin-top:.8rem;display:inline-block;border-bottom:none !important;padding:0 !important}
-.mega-side .ms-dots{position:absolute;right:-10px;top:-10px;width:110px;height:80px;background-image:radial-gradient(var(--bright-blue) 2px,transparent 2px);background-size:14px 14px;opacity:.35}
-.mega-note{font-size:.75rem;color:var(--muted);padding:.5rem .8rem 0;border-top:1px solid var(--line);margin-top:.4rem}
-@media(max-width:680px){.mega-panel{position:static;transform:none;width:100%;opacity:1;visibility:visible;pointer-events:auto;box-shadow:none;border:none;padding:.4rem 0 .4rem 1rem;grid-template-columns:1fr;display:none}
-.nav-mega.open .mega-panel{display:grid}
-.mega-side{display:none}}
 /* hosts studio photo */
 .hosts-photo{margin:0 0 1.5rem}
 .hosts-photo img{width:100%;height:auto;max-height:480px;object-fit:cover;display:block}
@@ -491,7 +454,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
 @media(max-width:900px){.atl{grid-template-columns:1fr}.atl .col{padding:0;border:none;margin-bottom:2rem}.atl .col-c{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2rem 0}}
 
 /* ---------- Square corners experiment (delete this block to restore curves) ---------- */
-.card,.epi-card,.row-item,.tier,.quote,.cms,.photo,.guest,.feat,.article-item,.feat-article,.host-card,.mega-panel,.mega-side,.mm-explorer,.platform,.sub-band iframe,.mm-search input,.sub-form input,.tiers .tier,.band,.sub-card{border-radius:0 !important}
+.card,.epi-card,.row-item,.tier,.quote,.cms,.photo,.guest,.feat,.article-item,.feat-article,.host-card,.platform,.sub-band iframe,.sub-form input,.tiers .tier,.band,.sub-card{border-radius:0 !important}
 .tier.featured::before{border-radius:0}
 
 /* ---------- Responsive ---------- */
@@ -511,7 +474,6 @@ audio{width:100%;height:38px;margin-top:.7rem}
   .partner-hero-grid{min-height:0;padding:2.75rem 1.5rem 3.5rem}.partner-hero-copy{padding:0}.partner-hero h1{font-size:clamp(2.2rem,10vw,3rem)}.partner-hero .kicker{font-size:1rem}.partner-proof-stats{grid-template-columns:1fr;gap:0}.partner-proof-stats>div{padding:1.6rem 0 0}.partner-proof-stats>div+div{border-left:0;border-top:1px solid var(--line);padding:1.6rem 0 0;margin-top:1.6rem}.partner-work-card{grid-template-columns:1fr;gap:1.25rem}.partner-work-media{max-width:430px}.case-study-detail{margin-top:1rem}.case-study-detail-grid{grid-template-columns:1fr}
 }
 /* ---------- QA batch: Sept. 23 ---------- */
-.nav-mega{display:none}
 .nav-cta{padding:.62rem 20px}
 .partner-testimonials{background:#eef0f6;color:var(--ink);padding:5.5rem 0}
 .testimonial-shell{max-width:940px;margin:0 auto;border:none;padding:0;grid-template-columns:minmax(0,1fr) auto;align-items:end}
@@ -571,8 +533,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
 .event-calendar-register{align-self:flex-start;margin-top:.9rem;padding:0;background:none;border:0;border-radius:0;color:var(--brand-blue);font:700 .82rem/1 var(--sans);letter-spacing:.06em;text-transform:uppercase}
 .event-calendar-register:hover{color:var(--bright-blue);transform:none}
 .research-feature{display:grid;grid-template-columns:.95fr 1.05fr;gap:2.5rem;align-items:center}
-.research-feature img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid rgba(255,255,255,.2)}
-.research-legacy{display:none}
+.research-feature img{width:100%;aspect-ratio:1938/1615;object-fit:contain;background:#17065d;border:1px solid rgba(255,255,255,.2)}
 .band .partner-field label{color:#c9d0ff}
 .band .partner-form .btn-primary{background:var(--bright-blue)}
 .sub-band{background:#fff;border-top:1px solid var(--line)}
@@ -621,25 +582,6 @@ audio{width:100%;height:38px;margin-top:.7rem}
       <a href="#media" data-page="media">Media</a>
       <a href="#events" data-page="events">Events</a>
       <a class="market-map-nav" href="#research" data-page="research">Market Map</a>
-      <div class="nav-mega">
-        <a href="#research" data-page="research">Research &amp; Tools <span class="caret">▾</span></a>
-        <div class="mega-panel" role="menu" aria-label="Research and tools">
-          <div class="mega-list">
-            <a class="mega-item" href="#research"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg><span><span class="mi-title">Edtech AI Market Map</span><span class="mi-desc" style="display:block">300+ AI tools mapped across 60+ K-12 use cases.</span></span></a>
-            <a class="mega-item" href="#research"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg><span><span class="mi-title">The Edtech Insiders Index</span><span class="mi-desc" style="display:block">A curated, independently reviewed tool directory.</span></span></a>
-            <a class="mega-item" href="#research"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l5 5v15H6z"/><path d="M15 2v5h5M9.5 13h6M9.5 17h6M9.5 9h2"/></svg><span><span class="mi-title">Research Reports</span><span class="mi-desc" style="display:block">Original analysis and landscape research.</span></span></a>
-            <a class="mega-item" href="#research"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 8.5c0-1.9 2.2-3 5-3s5 1.1 5 3-2.2 2.7-5 3.3-5 1.4-5 3.2 2.2 3 5 3 5-1.1 5-3"/></svg><span><span class="mi-title">Fund Research</span><span class="mi-desc" style="display:block">Commission or support original research.</span></span></a>
-            <div class="mega-note">More tools are in the works. This menu will grow.</div>
-          </div>
-          <div class="mega-side">
-            <span class="ms-dots"></span>
-            <span class="ms-label">Featured</span>
-            <span class="ms-title">Browse the Market Map</span>
-            <p>Search 50+ categories and 300+ tools. The Edtech landscape, mapped.</p>
-            <a href="https://k12-compare-bwylnk0v3-craig-k12compares-projects.vercel.app" target="_blank" rel="noopener">Open the map →</a>
-          </div>
-        </div>
-      </div>
       <a href="#about" data-page="about">About</a>
       <a class="nav-cta" href="#partners" data-page="partners">Partner with us</a>
     </div>
@@ -988,59 +930,14 @@ audio{width:100%;height:38px;margin-top:.7rem}
     <div class="wrap">
       <div class="band">
         <div class="section research-feature">
-          <img src="https://assets.softr-files.com/applications/6674311b-04ea-4c08-af2e-81ee5c7e365c/assets/b84dff48-959c-4162-b91c-6a4c5961680e.jpeg" alt="Edtech AI Market Map">
+          <img src="assets/research/edtech-insiders-genai-market-map-2026.jpg" alt="Edtech Insiders Generative AI Use Cases in K-12 Education Market Map, updated March 2026">
           <div>
             <span class="label on-dark">Featured resource</span>
             <h2>The Edtech AI Market Map</h2>
             <p>A map of AI tools in education, built to help founders, investors, and education leaders understand the competitive landscape.</p>
-            <div class="btn-row"><a class="btn btn-light" href="https://www.edtechinsiders.ai/ai-tool-directory" target="_blank" rel="noopener">Explore the map →</a></div>
+            <div class="btn-row"><a class="btn btn-light" href="https://www.edtechinsiders.ai/" target="_blank" rel="noopener">Explore the map →</a></div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section tight research-legacy">
-    <div class="wrap">
-      <span class="label">Try it now</span>
-      <div class="section-head"><h2>Browse the Market Map.</h2></div>
-      <div class="mm-explorer">
-        <div class="mm-search">
-          <input type="text" id="mm-q" placeholder="Search categories — try &quot;AI&quot;, &quot;assessment&quot;, or &quot;math&quot;" aria-label="Search Market Map categories" oninput="mmFilter(this.value)">
-          <a class="btn btn-primary" href="https://k12-compare-bwylnk0v3-craig-k12compares-projects.vercel.app" target="_blank" rel="noopener">Search the full map →</a>
-        </div>
-        <div class="mm-cats" id="mm-cats"></div>
-        <p class="mm-empty" id="mm-empty">No matching category here — the full Market Map covers 60+ use cases. <a href="https://k12-compare-bwylnk0v3-craig-k12compares-projects.vercel.app" target="_blank" rel="noopener" style="font-weight:600">Search it directly →</a></p>
-        <div class="mm-foot">
-          <div class="mm-stats">
-            <div class="mm-stat"><div class="n-big">300+</div><div class="n-label">tools tracked</div></div>
-            <div class="mm-stat"><div class="n-big">60+</div><div class="n-label">K-12 use cases</div></div>
-            <div class="mm-stat"><div class="n-big">50+</div><div class="n-label">categories</div></div>
-          </div>
-          <a class="btn btn-secondary" href="https://k12-compare-bwylnk0v3-craig-k12compares-projects.vercel.app" target="_blank" rel="noopener">Open the full Market Map →</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section tight research-legacy">
-    <div class="wrap">
-      <div class="card">
-        <span class="card-tag">New</span>
-        <h3>The Edtech Insiders Index</h3>
-        <p>A curated, independently reviewed directory of Edtech tools for practitioners who need to cut through vendor noise and find what actually works. It is informed by verified educator reviews and the Edtech Insiders editorial lens.</p>
-        <a class="card-cta" href="#research">Browse the index →</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="section tight research-legacy">
-    <div class="wrap">
-      <span class="label">From the research desk</span>
-      <p style="color:var(--muted);margin-bottom:1.4rem">Original analysis and landscape research from the Edtech Insiders team.</p>
-      <div class="row-list">
-        <div class="row-item"><div><div class="ri-meta">Report · CMS feed</div><div class="ri-title">[CMS: Report or whitepaper title]</div><div class="ri-sub">Reports, whitepapers, and data pieces populate here</div></div><a href="#research">Read →</a></div>
-        <div class="row-item"><div><div class="ri-meta">Whitepaper · CMS feed</div><div class="ri-title">[CMS: Report or whitepaper title]</div><div class="ri-sub">Reports, whitepapers, and data pieces populate here</div></div><a href="#research">Read →</a></div>
       </div>
     </div>
   </div>
@@ -1719,19 +1616,9 @@ audio{width:100%;height:38px;margin-top:.7rem}
       a.classList.toggle('active',a.getAttribute('data-page')===h);
     });
     document.querySelector('.nav-links').classList.remove('open');
-    document.querySelectorAll('.nav-mega.open').forEach(function(m){m.classList.remove('open');});
     window.scrollTo(0,0);
   }
 
-  // mobile mega-menu toggle
-  document.querySelectorAll('.nav-mega>a').forEach(function(a){
-    a.addEventListener('click',function(e){
-      if(window.innerWidth<=680 && !a.parentElement.classList.contains('open')){
-        e.preventDefault();
-        a.parentElement.classList.add('open');
-      }
-    });
-  });
   window.addEventListener('hashchange',show);
   show();
 })();
@@ -1861,22 +1748,6 @@ window.etiCaseStudy=function(button){
   }).catch(function(){/* keep hardcoded fallback */});
 })();
 
-/* ---- Market Map mini explorer ---- */
-var MM_BASE='https://k12-compare-bwylnk0v3-craig-k12compares-projects.vercel.app';
-var MM_CATS=["LMS Platforms","Assessment & Testing","SIS","STEM & Coding","Special Education","SEL","Cybersecurity","AI Tutoring","School Management","Math","Gradebooks","Behavior Management","Device Management","ELA","Science","Communication","Rostering & SSO","Data Analytics","Classroom Collaboration","ELL / ESL"];
-function mmRender(list){
-  var wrap=document.getElementById('mm-cats');
-  if(!wrap)return;
-  wrap.innerHTML=list.map(function(c){
-    return '<a class="mm-cat" href="'+MM_BASE+'" target="_blank" rel="noopener"><span class="mm-dot"></span>'+c+'</a>';
-  }).join('');
-  document.getElementById('mm-empty').style.display=list.length?'none':'block';
-}
-function mmFilter(q){
-  q=(q||'').trim().toLowerCase();
-  mmRender(q?MM_CATS.filter(function(c){return c.toLowerCase().indexOf(q)>-1;}):MM_CATS);
-}
-mmRender(MM_CATS);
 var edd=document.getElementById('ed-date');
 if(edd)edd.textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
 
