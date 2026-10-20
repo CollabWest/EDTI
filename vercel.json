@@ -1,0 +1,23 @@
+{
+  "buildCommand": "node scripts/build-launch.mjs",
+  "outputDirectory": "public",
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/podcast", "destination": "/media", "permanent": true },
+    { "source": "/general-8", "destination": "/media", "permanent": true },
+    { "source": "/newsletter", "destination": "/media", "permanent": true },
+    { "source": "/contact-3", "destination": "/about", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/media", "destination": "/media/index.html" },
+    { "source": "/research", "destination": "/research/index.html" },
+    { "source": "/events", "destination": "/events/index.html" },
+    { "source": "/partners", "destination": "/partners/index.html" },
+    { "source": "/partner-form", "destination": "/partner-form/index.html" },
+    { "source": "/about", "destination": "/about/index.html" },
+    {
+      "source": "/higher-education-series",
+      "destination": "/higher-education-series/index.html"
+    }
+  ]
+}
