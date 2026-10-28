@@ -492,8 +492,11 @@ audio{width:100%;height:38px;margin-top:.7rem}
 .series-feature-portrait img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;filter:grayscale(1);display:block}
 .series-feature-portrait figcaption{font-size:.78rem;color:var(--muted);margin-top:.6rem}
 .higher-ed-hero .series-byline{font-size:1.1rem}
-.higher-ed-schedule{padding:1.4rem 0;background:var(--deep-blue);color:#DDE1FF;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.higher-ed-schedule p{font-size:1.05rem}
+.higher-ed-guests{padding:1.4rem 0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.series-headshots{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;padding:0 0 4px;scrollbar-width:thin;scrollbar-color:var(--brand-blue) transparent}
+.series-headshots:focus-visible{outline:2px solid var(--bright-blue);outline-offset:6px}
+.series-headshot{flex:1 0 72px;min-width:72px;max-width:100px;aspect-ratio:4/5;overflow:hidden;scroll-snap-align:start;background:var(--bg)}
+.series-headshot img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 25%;filter:grayscale(1);transform:scale(var(--portrait-zoom,1));transform-origin:50% 25%}
 .higher-ed-listen{background:#fff}
 .series-player{margin-top:2rem;min-width:0}
 .series-player iframe{display:block;width:100%;max-width:100%;border:0}
@@ -1010,8 +1013,24 @@ audio{width:100%;height:38px;margin-top:.7rem}
       <p class="kicker">A new Edtech Insiders podcast series exploring the ideas, innovations, and leaders shaping the future of higher education.</p>
     </div>
   </div>
-  <div class="higher-ed-schedule">
-    <div class="wrap"><p>New episodes every Tuesday through October</p></div>
+  <div class="higher-ed-guests">
+    <div class="wrap">
+      <div class="series-headshots" role="region" aria-label="HigherEd Series guests" tabindex="0">
+        <div class="series-headshot" style="--portrait-zoom:1.7" title="Noah Pickus · Duke University"><img src="/assets/highered-guests/noah-pickus.webp" alt="Noah Pickus" width="360" height="480" loading="lazy"></div>
+        <div class="series-headshot" style="--portrait-zoom:1.5" title="Cheryl Nixon · Berea College"><img src="/assets/highered-guests/cheryl-nixon.webp" alt="Cheryl Nixon" width="320" height="480" loading="lazy"></div>
+        <div class="series-headshot" title="Sam Madden · MIT"><img src="/assets/highered-guests/sam-madden.webp" alt="Sam Madden" width="360" height="337" loading="lazy"></div>
+        <div class="series-headshot" title="Eric Klopfer · MIT"><img src="/assets/highered-guests/eric-klopfer.webp" alt="Eric Klopfer" width="360" height="240" loading="lazy"></div>
+        <div class="series-headshot" title="Bryden Sweeney-Taylor · Outer Coast"><img src="/assets/highered-guests/bryden-sweeney-taylor.webp" alt="Bryden Sweeney-Taylor" width="322" height="480" loading="lazy"></div>
+        <div class="series-headshot" style="--portrait-zoom:1.5" title="Michael S. Roth · Wesleyan University"><img src="/assets/highered-guests/michael-roth.webp" alt="Michael S. Roth" width="320" height="480" loading="lazy"></div>
+        <div class="series-headshot" title="Mallory Dwinal-Palisch · The Craft Education System"><img src="/assets/highered-guests/mallory-dwinal-palisch.webp" alt="Mallory Dwinal-Palisch" width="360" height="480" loading="lazy"></div>
+        <div class="series-headshot" title="Michael J. Sorrell · Paul Quinn College"><img src="/assets/highered-guests/michael-sorrell.webp" alt="Michael J. Sorrell" width="360" height="360" loading="lazy"></div>
+        <div class="series-headshot" title="George Siemens · Southern New Hampshire University"><img src="/assets/highered-guests/george-siemens.webp" alt="George Siemens" width="360" height="480" loading="lazy"></div>
+        <div class="series-headshot" title="Sasha Thackaberry-Voinovich · Newstate University"><img src="/assets/highered-guests/sasha-thackaberry-voinovich.webp" alt="Sasha Thackaberry-Voinovich" width="360" height="360" loading="lazy"></div>
+        <div class="series-headshot" title="Sal Khan · Khan Academy"><img src="/assets/highered-guests/sal-khan.webp" alt="Sal Khan" width="360" height="450" loading="lazy"></div>
+        <div class="series-headshot" title="Nils Gilman · Berggruen Institute"><img src="/assets/highered-guests/nils-gilman.webp" alt="Nils Gilman" width="360" height="480" loading="lazy"></div>
+        <div class="series-headshot" style="--portrait-zoom:1.7" title="Paul LeBlanc"><img src="/assets/highered-guests/paul-leblanc.webp" alt="Paul LeBlanc" width="360" height="270" loading="lazy"></div>
+      </div>
+    </div>
   </div>
   <div class="section higher-ed-listen">
     <div class="wrap">

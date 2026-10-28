@@ -65,3 +65,16 @@ test('the filtered HigherEd Buzzsprout player is embedded only on the series pag
     assert.match(html, /Amazon Music/);
   }
 });
+test('HigherEd release banner is replaced by the thirteen supplied headshots', () => {
+  const html = fs.readFileSync(path.join(root, 'public/higher-education-series/index.html'), 'utf8');
+  assert.doesNotMatch(html, /New episodes every Tuesday through October/);
+  assert.doesNotMatch(html, /class="higher-ed-schedule"/);
+  const row = html.match(/<div class="higher-ed-guests">([\s\S]*?)<div class="section higher-ed-listen">/)[1];
+  assert.match(row, /aria-label="HigherEd Series guests" tabindex="0"/);
+  const images = [...row.matchAll(/<img src="(\/assets\/highered-guests\/[^\"]+)" alt="([^\"]+)"/g)];
+  assert.equal(images.length, 13);
+  assert.equal(new Set(images.map(m => m[1])).size, 13);
+  for (const [,src] of images) assert.ok(fs.existsSync(path.join(root, 'public', src)), src);
+  const homepage = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8');
+  assert.doesNotMatch(homepage, /class="higher-ed-guests"/);
+});
