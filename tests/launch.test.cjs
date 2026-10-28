@@ -30,6 +30,16 @@ test('guest walls and the approved About photograph survive standalone rendering
   const about = fs.readFileSync(path.join(root, 'public/about/index.html'), 'utf8');
   assert.match(about, /<img src="[^"]+" id="about-contact-photo"/);
 });
+test('every public page includes the approved cookie copy and concise choice labels', () => {
+  for (const id of routes) {
+    const html = fs.readFileSync(path.join(root, 'public', id === 'home' ? '' : id, 'index.html'), 'utf8');
+    assert.match(html, /id="analytics-consent-heading">Cookie preferences<\/h2>/);
+    assert.match(html, /These cookies are provided by Google Analytics and only turn on if you accept\./);
+    assert.match(html, /data-analytics-choice="decline">Reject<\/button>/);
+    assert.match(html, /data-analytics-choice="allow">Accept<\/button>/);
+    assert.doesNotMatch(html, /data-analytics-choice="(?:decline|allow)">(?:Essential only|Allow analytics)<\/button>/);
+  }
+});
 test('old addresses have permanent redirects and existing core addresses remain', () => {
   const config = JSON.parse(fs.readFileSync(path.join(root,'vercel.json')));
   for (const old of ['/podcast','/general-8','/contact-3']) assert.ok(config.redirects.some(r => r.source === old && r.permanent));
@@ -37,4 +47,21 @@ test('old addresses have permanent redirects and existing core addresses remain'
   const sitemap = fs.readFileSync(path.join(root,'public/sitemap.xml'),'utf8');
   assert.equal((sitemap.match(/<loc>/g)||[]).length, routes.length);
   assert.ok(!sitemap.includes('#'));
+});
+test('the filtered HigherEd Buzzsprout player is embedded only on the series page', () => {
+  const container = 'buzzsprout-large-player-filter-tags-tags-highered-series';
+  for (const id of routes) {
+    const html = fs.readFileSync(path.join(root, 'public', id === 'home' ? '' : id, 'index.html'), 'utf8');
+    const embeds = [...html.matchAll(/<script[^>]+src="(https:\/\/www\.buzzsprout\.com\/1877869\.js[^\"]*)"/g)];
+    assert.equal(embeds.length, id === 'higher-education-series' ? 1 : 0, id);
+    if (!embeds.length) continue;
+    assert.ok(html.includes(`id="${container}"`));
+    const url = new URL(embeds[0][1].replaceAll('&amp;', '&'));
+    assert.equal(url.searchParams.get('container_id'), container);
+    assert.equal(url.searchParams.get('filter'), 'tags');
+    assert.equal(url.searchParams.get('player'), 'large');
+    assert.equal(url.searchParams.get('tags[]'), 'HigherEd Series');
+    assert.match(html, /Apple Podcasts/);
+    assert.match(html, /Amazon Music/);
+  }
 });
