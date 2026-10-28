@@ -65,6 +65,28 @@ test('the filtered HigherEd Buzzsprout player is embedded only on the series pag
     assert.match(html, /Amazon Music/);
   }
 });
+test('HigherEd rollover captions identify each university or organization accurately', () => {
+  const html = fs.readFileSync(path.join(root, 'public/higher-education-series/index.html'), 'utf8');
+  const row = html.match(/<div class="higher-ed-guests">([\s\S]*?)<div class="section higher-ed-listen">/)[1];
+  const expected = {
+  "Noah Pickus": "Duke University",
+  "Cheryl Nixon": "Berea College",
+  "Sam Madden": "MIT",
+  "Eric Klopfer": "MIT",
+  "Bryden Sweeney-Taylor": "Outer Coast",
+  "Michael S. Roth": "Wesleyan University",
+  "Mallory Dwinal-Palisch": "Craft Education · Western Governors University",
+  "Michael J. Sorrell": "Paul Quinn College",
+  "George Siemens": "Southern New Hampshire University",
+  "Sasha Thackaberry-Voinovich": "Newstate University",
+  "Sal Khan": "Khan Academy",
+  "Nils Gilman": "Berggruen Institute",
+  "Paul LeBlanc": "Southern New Hampshire University (former president)"
+};
+  const captions = [...row.matchAll(/<span class="guest-tile-name">([^<]+)<\/span><span class="guest-tile-role">([^<]+)<\/span>/g)];
+  assert.equal(captions.length, 13);
+  captions.forEach(([,name,affiliation]) => assert.equal(affiliation, expected[name], name));
+});
 test('HigherEd host bio stays on-page without an external Matthew CTA', () => {
   const html = fs.readFileSync(path.join(root, 'public/higher-education-series/index.html'), 'utf8');
   assert.doesNotMatch(html, /mzrascoff\.com|Learn more about Matthew/);
