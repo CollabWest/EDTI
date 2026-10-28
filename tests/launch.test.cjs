@@ -78,15 +78,20 @@ test('HigherEd release banner is replaced by the thirteen supplied headshots', (
   const homepage = fs.readFileSync(path.join(root, 'public/index.html'), 'utf8');
   assert.doesNotMatch(homepage, /class="higher-ed-guests"/);
 });
-test('HigherEd guest motion has a pause control and reduced-motion fallback', () => {
+test('HigherEd guests reuse homepage styling and rollover names without a pause button', () => {
   const html = fs.readFileSync(path.join(root, 'public/higher-education-series/index.html'), 'utf8');
   assert.match(html, /<script defer src="\/assets\/highered-guests\.js"><\/script>/);
-  assert.match(html, /aria-label="Pause headshot animation" aria-pressed="false"/);
+  assert.doesNotMatch(html, /series-motion-toggle|series-headshots-controls/);
+  const row = html.match(/<div class="higher-ed-guests">([\s\S]*?)<div class="section higher-ed-listen">/)[1];
+  assert.equal((row.match(/class="series-headshot guest-tile tone-/g) || []).length, 13);
+  const names = [...row.matchAll(/alt="([^\"]+)"[^>]*><span class="guest-tile-overlay"><span class="guest-tile-name">([^<]+)<\/span>/g)];
+  assert.equal(names.length, 13);
+  names.forEach(([,alt,caption]) => assert.equal(alt, caption));
   assert.match(html, /@keyframes series-headshots-right/);
   assert.match(html, /prefers-reduced-motion:reduce/);
   const script = fs.readFileSync(path.join(root, 'public/assets/highered-guests.js'), 'utf8');
   new vm.Script(script);
-  assert.match(script, /original \* 1\.1/);
+  assert.doesNotMatch(script, /series-motion-toggle|fitPortraits|copy\.inert/);
   assert.match(script, /copy\.setAttribute\('aria-hidden', 'true'\)/);
   for (const id of routes.filter(id => id !== 'higher-education-series')) {
     const page = fs.readFileSync(path.join(root, 'public', id === 'home' ? '' : id, 'index.html'), 'utf8');
