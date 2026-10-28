@@ -65,6 +65,14 @@ test('the filtered HigherEd Buzzsprout player is embedded only on the series pag
     assert.match(html, /Amazon Music/);
   }
 });
+test('HigherEd host bio stays on-page without an external Matthew CTA', () => {
+  const html = fs.readFileSync(path.join(root, 'public/higher-education-series/index.html'), 'utf8');
+  assert.doesNotMatch(html, /mzrascoff\.com|Learn more about Matthew/);
+  assert.match(html, /<h2>Matthew Rascoff<\/h2>/);
+  assert.match(html, /class="series-host-photo"/);
+  assert.match(html, /Matthew Rascoff is an education innovation leader/);
+  for (const platform of ['podcasts.apple.com','open.spotify.com','music.amazon.com']) assert.ok(html.includes(platform));
+});
 test('HigherEd release banner is replaced by the thirteen supplied headshots', () => {
   const html = fs.readFileSync(path.join(root, 'public/higher-education-series/index.html'), 'utf8');
   assert.doesNotMatch(html, /New episodes every Tuesday through October/);
