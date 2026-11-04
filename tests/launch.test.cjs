@@ -130,13 +130,13 @@ test('HigherEd guests reuse homepage styling and rollover names without a pause 
   }
 });
 
-test('ESA preserves the supplied nine guests in lineup order with local portraits and organizations', () => {
+test('ESA preserves all nine guests with the Bundled portraits separated in the scrolling row', () => {
   const html = fs.readFileSync(path.join(root, 'public/esa-series/index.html'), 'utf8');
   const main = html.split('<main>')[1].split('</main>')[0];
   const expected = [
     ['Dr. Cara Candal','ExcelinEd'], ['Ryan Delk','Primer'], ['Joseph Connor','Odyssey'],
-    ['Brian Co','Outschool'], ['Amar Kumar','KaiPod Learning'], ['Kelly Smith','Prenda'],
-    ['Amaan Ahmad','Pathfinder'], ['Jaysan Shah','Bundled'], ['William Wiltshire','Bundled']
+    ['Brian Co','Outschool'], ['Jaysan Shah','Bundled'], ['Amar Kumar','KaiPod Learning'],
+    ['Kelly Smith','Prenda'], ['Amaan Ahmad','Pathfinder'], ['William Wiltshire','Bundled']
   ];
   const captions = [...main.matchAll(/<span class="guest-tile-name">([^<]+)<\/span><span class="guest-tile-role">([^<]+)<\/span>/g)].map(m => m.slice(1));
   assert.deepEqual(captions, expected);
