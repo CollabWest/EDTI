@@ -1,8 +1,8 @@
 /* A seamless left-to-right guest row, retaining a static row for reduced motion. */
 (function () {
   'use strict';
-  var row = document.querySelector('.series-headshots');
-  if (!row) return;
+  document.querySelectorAll('.series-headshots').forEach(function (row) {
+  if (row.classList.contains('is-animated')) return;
   var portraits = Array.from(row.children);
   if (!portraits.length) return;
   var track = document.createElement('div');
@@ -19,5 +19,5 @@
   track.appendChild(copy);
   row.appendChild(track);
   row.classList.add('is-animated');
-
+  });
 }());

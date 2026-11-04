@@ -7,7 +7,7 @@ import path from 'node:path';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const source = readFileSync(path.join(root, 'index.html'), 'utf8');
 const start = '<!-- ================= HIGHER EDUCATION SERIES ================= -->';
-const end = '<!-- ================= RESEARCH & TOOLS ================= -->';
+const end = '<!-- ================= ESA PODCAST SERIES ================= -->';
 if (!source.includes(start) || !source.includes(end)) {
   throw new Error('Higher Education Series source markers are missing.');
 }

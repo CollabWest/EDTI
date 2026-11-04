@@ -9,6 +9,7 @@
     { "source": "/contact-3", "destination": "/about", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/esa-series", "destination": "/esa-series/index.html" },
     { "source": "/media", "destination": "/media/index.html" },
     { "source": "/research", "destination": "/research/index.html" },
     { "source": "/events", "destination": "/events/index.html" },

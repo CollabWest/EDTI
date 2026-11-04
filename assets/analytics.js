@@ -10,11 +10,12 @@
     home: ['/', 'Home'], media: ['/media', 'Media'], research: ['/research', 'Market Map'],
     events: ['/events', 'Events'], partners: ['/partners', 'Partnerships'],
     'partner-form': ['/partner-form', 'Partnership inquiry'], about: ['/about', 'About'],
-    'higher-education-series': ['/higher-education-series', 'Higher Education Series']
+    'higher-education-series': ['/higher-education-series', 'Higher Education Series'],
+    'esa-series': ['/esa-series', 'ESA Podcast Series']
   };
   var allowedEvents = ['partnership_cta_click', 'form_start', 'generate_lead',
     'newsletter_signup_click', 'plus_signup_click', 'podcast_click', 'podcast_play',
-    'event_registration_click', 'market_map_click', 'higher_ed_series_click', 'contact_email_click'];
+    'event_registration_click', 'market_map_click', 'higher_ed_series_click', 'esa_series_click', 'contact_email_click'];
   var allowedParameters = ['placement', 'form_id', 'link_domain', 'audio_id'];
   var panel = document.getElementById('analytics-consent');
   var started = false;
@@ -172,6 +173,7 @@
     if (url.origin === location.origin) {
       if (route === 'partners' || route === 'partner-form') track('partnership_cta_click', data);
       else if (route === 'higher-education-series') track('higher_ed_series_click', data);
+      else if (route === 'esa-series') track('esa_series_click', data);
     } else if (url.hostname === 'edtechinsiders.substack.com' && /subscribe/.test(url.pathname)) {
       var promo = link.closest('.ed-promo');
       var plus = /plus/i.test(link.textContent) || (promo && /Insiders Plus/i.test(promo.textContent));

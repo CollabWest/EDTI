@@ -91,6 +91,20 @@ test('form details and arbitrary URL parameters cannot enter tracked payloads', 
   assert.equal(h.tracked().at(-1)[2].form_id, 'partnership-inquiry');
 });
 
+test('the ESA page has its own consent-aware page view and series event', () => {
+  const h = harness();
+  h.navigate('esa-series');
+  assert.equal(h.tracked().length, 0);
+  h.allow.click();
+  h.navigate('esa-series');
+  assert.equal(h.tracked().length, 1);
+  const view = h.tracked()[0][2];
+  assert.equal(view.page_location, 'https://www.edtechinsiders.org/esa-series');
+  assert.equal(view.page_title, 'ESA Podcast Series | Edtech Insiders');
+  assert.equal(h.window.etiAnalytics.track('esa_series_click', { placement: 'navigation' }), true);
+  assert.equal(h.tracked().at(-1)[2].page_name, 'esa-series');
+});
+
 test('withdrawing consent disables events and removes only Google Analytics cookies', () => {
   const h = harness(undefined, true);
   const count = h.tracked().length;

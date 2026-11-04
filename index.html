@@ -67,7 +67,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(247,248,252,.92);backdrop-
 .nav-disclosure:focus-visible,.nav-dropdown a:focus-visible{outline:2px solid var(--bright-blue);outline-offset:4px}
 .nav-dropdown{position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(21,4,64,.06);padding:2rem 0}
 .nav-dropdown[hidden]{display:none}
-.nav-dropdown-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.nav-dropdown-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
 .nav-links .nav-dropdown-link{display:block;padding:.5rem 0;border:0;color:var(--deep-blue)}
 .nav-dropdown-link strong{display:block;font:500 1.25rem/1.3 var(--serif);margin-bottom:.45rem}
 .nav-dropdown-link span{display:block;max-width:35ch;font-size:.88rem;line-height:1.5;color:var(--muted)}
@@ -661,6 +661,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
           <div class="wrap nav-dropdown-grid">
             <a class="nav-dropdown-link" href="#media" data-page="media"><strong>Media overview</strong><span>The latest newsletter stories, podcast episodes, and Insiders Plus.</span></a>
             <a class="nav-dropdown-link" href="/higher-education-series" data-page="higher-education-series"><strong>Higher Education Series</strong><span>Explore the future of higher education with host Matthew Rascoff.</span></a>
+            <a class="nav-dropdown-link" href="/esa-series" data-page="esa-series"><strong>ESA Podcast Series</strong><span>Meet the people building new options for families using education savings accounts.</span></a>
           </div>
         </div>
       </div>
@@ -1068,6 +1069,48 @@ audio{width:100%;height:38px;margin-top:.7rem}
         <span class="label">About the Host</span>
         <h2>Matthew Rascoff</h2>
         <p>Matthew Rascoff is an education innovation leader who has worked across sectors to democratize access to knowledge and opportunity. He joined Stanford University in 2021 as the inaugural Vice Provost for Digital Education, advising Stanford’s president and provost on digital learning initiatives and establishing Stanford Digital Education (SDE).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESA PODCAST SERIES ================= -->
+<section class="page higher-ed-page" id="page-esa-series">
+  <div class="hero page-hero higher-ed-hero">
+    <div class="wrap">
+      <span class="label">Education Savings Accounts</span>
+      <h1>ESA Podcast Series</h1>
+      <p class="series-byline">Launching November 2026</p>
+      <p class="kicker">A new Edtech Insiders podcast series exploring education savings accounts and the people building the platforms, schools, and learning communities around them.</p>
+    </div>
+  </div>
+  <div class="higher-ed-guests">
+    <div class="wrap">
+      <div class="series-headshots" role="region" aria-label="ESA Series guests" tabindex="0">
+        <div class="series-headshot guest-tile tone-indigo" tabindex="0" title="Dr. Cara Candal · ExcelinEd"><img src="/assets/esa-guests/cara-candal.webp" alt="Dr. Cara Candal" width="720" height="718" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Dr. Cara Candal</span><span class="guest-tile-role">ExcelinEd</span></span></div>
+        <div class="series-headshot guest-tile tone-azure" tabindex="0" title="Ryan Delk · Primer"><img src="/assets/esa-guests/ryan-delk.webp" alt="Ryan Delk" width="720" height="880" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Ryan Delk</span><span class="guest-tile-role">Primer</span></span></div>
+        <div class="series-headshot guest-tile tone-navy" tabindex="0" title="Joseph Connor · Odyssey"><img src="/assets/esa-guests/joseph-connor.webp" alt="Joseph Connor" width="639" height="680" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Joseph Connor</span><span class="guest-tile-role">Odyssey</span></span></div>
+        <div class="series-headshot guest-tile tone-electric" tabindex="0" title="Brian Co · Outschool"><img src="/assets/esa-guests/brian-co.webp" alt="Brian Co" width="720" height="720" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Brian Co</span><span class="guest-tile-role">Outschool</span></span></div>
+        <div class="series-headshot guest-tile tone-indigo" tabindex="0" title="Amar Kumar · KaiPod Learning"><img src="/assets/esa-guests/amar-kumar.webp" alt="Amar Kumar" width="720" height="480" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Amar Kumar</span><span class="guest-tile-role">KaiPod Learning</span></span></div>
+        <div class="series-headshot guest-tile tone-azure" tabindex="0" title="Kelly Smith · Prenda"><img src="/assets/esa-guests/kelly-smith.webp" alt="Kelly Smith" width="720" height="900" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Kelly Smith</span><span class="guest-tile-role">Prenda</span></span></div>
+        <div class="series-headshot guest-tile tone-navy" tabindex="0" title="Amaan Ahmad · Pathfinder"><img src="/assets/esa-guests/amaan-ahmad.webp" alt="Amaan Ahmad" width="640" height="960" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Amaan Ahmad</span><span class="guest-tile-role">Pathfinder</span></span></div>
+        <div class="series-headshot guest-tile tone-electric" tabindex="0" style="--portrait-zoom:1.35" title="Jaysan Shah · Bundled"><img src="/assets/esa-guests/jaysan-shah.webp" alt="Jaysan Shah" width="720" height="960" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">Jaysan Shah</span><span class="guest-tile-role">Bundled</span></span></div>
+        <div class="series-headshot guest-tile tone-indigo" tabindex="0" style="--portrait-zoom:1.35" title="William Wiltshire · Bundled"><img src="/assets/esa-guests/william-wiltshire.webp" alt="William Wiltshire" width="720" height="960" loading="lazy"><span class="guest-tile-overlay"><span class="guest-tile-name">William Wiltshire</span><span class="guest-tile-role">Bundled</span></span></div>
+      </div>
+      <script defer src="/assets/highered-guests.js"></script>
+    </div>
+  </div>
+  <div class="section higher-ed-listen">
+    <div class="wrap">
+      <span class="label">The podcast</span>
+      <h2>Listen to the Series</h2>
+      <div class="series-player" id="buzzsprout-large-player-filter-tags-tags-esa-series"></div>
+      <script defer type="text/javascript" charset="utf-8" src="https://www.buzzsprout.com/1877869.js?container_id=buzzsprout-large-player-filter-tags-tags-esa-series&amp;filter=tags&amp;player=large&amp;tags%5B%5D=ESA+Series"></script>
+      <p class="kicker" style="margin-top:1rem">Follow Edtech Insiders on your favorite podcast platform.</p>
+      <div class="series-platforms">
+        <a class="series-platform" href="https://podcasts.apple.com/us/podcast/edtech-insiders/id1592196859" target="_blank" rel="noopener">Apple Podcasts <span aria-hidden="true">↗</span></a>
+        <a class="series-platform" href="https://open.spotify.com/show/4PeMaMtSPgIBYXhxoqAyik" target="_blank" rel="noopener">Spotify <span aria-hidden="true">↗</span></a>
+        <a class="series-platform" href="https://music.amazon.com/podcasts/f4dcf294-1a0d-48aa-b2b2-45bb57392937/edtech-insiders" target="_blank" rel="noopener">Amazon Music <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </div>
@@ -1746,6 +1789,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
       <a href="https://edtechinsiders.buzzsprout.com" target="_blank" rel="noopener">All platforms</a>
       <a href="https://feeds.buzzsprout.com/1877869.rss" target="_blank" rel="noopener">RSS feed</a>
       <a href="/higher-education-series">Higher Education Series</a>
+      <a href="/esa-series">ESA Podcast Series</a>
     </div>
     <div>
       <h4>Newsletter</h4>
@@ -1769,11 +1813,11 @@ audio{width:100%;height:38px;margin-top:.7rem}
 
 <script>
 (function(){
-  var pages=['home','media','higher-education-series','research','events','partners','partner-form','about'];
+  var pages=['home','media','higher-education-series','esa-series','research','events','partners','partner-form','about'];
   var redirects={podcast:'media',newsletter:'media',plus:'media'};
   function show(){
     var path=location.pathname.replace(/\/$/,'');
-    var routePages={'/media':'media','/higher-education-series':'higher-education-series','/research':'research','/events':'events','/partners':'partners','/partner-form':'partner-form','/about':'about'};
+    var routePages={'/media':'media','/higher-education-series':'higher-education-series','/esa-series':'esa-series','/research':'research','/events':'events','/partners':'partners','/partner-form':'partner-form','/about':'about'};
     var defaultPage=routePages[path.replace(/\/index\.html$/,'')]||'home';
     var requested=(location.hash||'#'+defaultPage).replace('#','').split('?')[0];
     var h=requested;
@@ -1794,7 +1838,7 @@ audio{width:100%;height:38px;margin-top:.7rem}
     });
     document.querySelectorAll('.nav-links a[data-page]').forEach(function(a){
       var navPage=a.getAttribute('data-page');
-      a.classList.toggle('active',navPage===h||(h==='higher-education-series'&&navPage==='media'&&!a.classList.contains('nav-dropdown-link')));
+      a.classList.toggle('active',navPage===h||((h==='higher-education-series'||h==='esa-series')&&navPage==='media'&&!a.classList.contains('nav-dropdown-link')));
     });
     document.querySelector('.nav-links').classList.remove('open');
     document.querySelector('.menu-btn').setAttribute('aria-expanded','false');

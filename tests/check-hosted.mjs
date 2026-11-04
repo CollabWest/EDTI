@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 const base = process.argv[2];
 if (!base || new URL(base).protocol !== 'https:') throw new Error('Supply the HTTPS deployment address.');
-for (const route of ['/', '/media', '/higher-education-series', '/research', '/events', '/partners', '/partner-form', '/about']) {
+for (const route of ['/', '/media', '/higher-education-series', '/esa-series', '/research', '/events', '/partners', '/partner-form', '/about']) {
   const response = await fetch(base + route);
   assert.equal(response.status, 200, `${route}: HTTP ${response.status}`);
   const html = await response.text();

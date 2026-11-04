@@ -11,6 +11,7 @@ const pages = [
   ['home', '/', "Edtech Insiders: Where Edtech's most important conversations happen", 'Podcasts, newsletters, research, events, and partnerships connecting the people shaping education technology.'],
   ['media', '/media', 'Podcast, Newsletter & Insiders Plus | Edtech Insiders', 'Listen to Edtech Insiders interviews, read the newsletter, and explore Insiders Plus membership.'],
   ['higher-education-series', '/higher-education-series', 'Higher Education Series with Matthew Rascoff | Edtech Insiders', 'Explore the ideas, innovations, and leaders shaping higher education in the series hosted by Matthew Rascoff.'],
+  ['esa-series', '/esa-series', 'ESA Podcast Series | Edtech Insiders', 'Explore education savings accounts with guests from ExcelinEd, Primer, Odyssey, Outschool, KaiPod Learning, Prenda, Pathfinder, and Bundled.'],
   ['research', '/research', 'Edtech AI Market Map | Edtech Insiders', 'Explore the Edtech Insiders Generative AI Market Map and discuss funding future research.'],
   ['events', '/events', 'Events & Community Gatherings | Edtech Insiders', 'Find Edtech Insiders events, webinars, happy hours, and opportunities to connect with the education technology community.'],
   ['partners', '/partners', 'Partnerships | Edtech Insiders', 'Explore brand awareness, thought leadership, and convening partnerships with Edtech Insiders.'],

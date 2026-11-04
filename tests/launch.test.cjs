@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const root = path.join(__dirname, '..');
-const routes = ['home','media','higher-education-series','research','events','partners','partner-form','about'];
+const routes = ['home','media','higher-education-series','esa-series','research','events','partners','partner-form','about'];
 test('every public page has its own visible initial HTML and search metadata', () => {
   for (const id of routes) {
     const route = id === 'home' ? '' : id;
@@ -43,24 +43,25 @@ test('every public page includes the approved cookie copy and concise choice lab
 test('old addresses have permanent redirects and existing core addresses remain', () => {
   const config = JSON.parse(fs.readFileSync(path.join(root,'vercel.json')));
   for (const old of ['/podcast','/general-8','/contact-3']) assert.ok(config.redirects.some(r => r.source === old && r.permanent));
-  for (const current of ['/events','/about','/higher-education-series']) assert.ok(config.rewrites.some(r => r.source === current));
+  for (const current of ['/events','/about','/higher-education-series','/esa-series']) assert.ok(config.rewrites.some(r => r.source === current));
   const sitemap = fs.readFileSync(path.join(root,'public/sitemap.xml'),'utf8');
   assert.equal((sitemap.match(/<loc>/g)||[]).length, routes.length);
   assert.ok(!sitemap.includes('#'));
 });
-test('the filtered HigherEd Buzzsprout player is embedded only on the series page', () => {
-  const container = 'buzzsprout-large-player-filter-tags-tags-highered-series';
+test('each series embeds only its own filtered Buzzsprout player', () => {
   for (const id of routes) {
+    const series = id === 'higher-education-series' ? 'HigherEd' : id === 'esa-series' ? 'ESA' : null;
+    const container = `buzzsprout-large-player-filter-tags-tags-${series === 'HigherEd' ? 'highered' : 'esa'}-series`;
     const html = fs.readFileSync(path.join(root, 'public', id === 'home' ? '' : id, 'index.html'), 'utf8');
     const embeds = [...html.matchAll(/<script[^>]+src="(https:\/\/www\.buzzsprout\.com\/1877869\.js[^\"]*)"/g)];
-    assert.equal(embeds.length, id === 'higher-education-series' ? 1 : 0, id);
+    assert.equal(embeds.length, series ? 1 : 0, id);
     if (!embeds.length) continue;
     assert.ok(html.includes(`id="${container}"`));
     const url = new URL(embeds[0][1].replaceAll('&amp;', '&'));
     assert.equal(url.searchParams.get('container_id'), container);
     assert.equal(url.searchParams.get('filter'), 'tags');
     assert.equal(url.searchParams.get('player'), 'large');
-    assert.equal(url.searchParams.get('tags[]'), 'HigherEd Series');
+    assert.equal(url.searchParams.get('tags[]'), `${series} Series`);
     assert.match(html, /Apple Podcasts/);
     assert.match(html, /Amazon Music/);
   }
@@ -123,8 +124,32 @@ test('HigherEd guests reuse homepage styling and rollover names without a pause 
   new vm.Script(script);
   assert.doesNotMatch(script, /series-motion-toggle|fitPortraits|copy\.inert/);
   assert.match(script, /copy\.setAttribute\('aria-hidden', 'true'\)/);
-  for (const id of routes.filter(id => id !== 'higher-education-series')) {
+  for (const id of routes.filter(id => !['higher-education-series','esa-series'].includes(id))) {
     const page = fs.readFileSync(path.join(root, 'public', id === 'home' ? '' : id, 'index.html'), 'utf8');
     assert.doesNotMatch(page, /<script defer src="\/assets\/highered-guests\.js">/);
+  }
+});
+
+test('ESA preserves the supplied nine guests in lineup order with local portraits and organizations', () => {
+  const html = fs.readFileSync(path.join(root, 'public/esa-series/index.html'), 'utf8');
+  const main = html.split('<main>')[1].split('</main>')[0];
+  const expected = [
+    ['Dr. Cara Candal','ExcelinEd'], ['Ryan Delk','Primer'], ['Joseph Connor','Odyssey'],
+    ['Brian Co','Outschool'], ['Amar Kumar','KaiPod Learning'], ['Kelly Smith','Prenda'],
+    ['Amaan Ahmad','Pathfinder'], ['Jaysan Shah','Bundled'], ['William Wiltshire','Bundled']
+  ];
+  const captions = [...main.matchAll(/<span class="guest-tile-name">([^<]+)<\/span><span class="guest-tile-role">([^<]+)<\/span>/g)].map(m => m.slice(1));
+  assert.deepEqual(captions, expected);
+  const images = [...main.matchAll(/<img src="(\/assets\/esa-guests\/[^\"]+)" alt="([^\"]+)"/g)];
+  assert.equal(new Set(images.map(m => m[1])).size, 9);
+  assert.deepEqual(images.map(m => m[2]), expected.map(pair => pair[0]));
+  assert.match(main, /<h1>ESA Podcast Series<\/h1>/);
+  assert.match(main, /Launching November 2026/);
+  assert.doesNotMatch(main, /Hosted by|About the Host|Matthew Rascoff|every Tuesday|HigherEd\+Series/);
+  assert.match(main, /aria-label="ESA Series guests" tabindex="0"/);
+  assert.match(main, /<script defer src="\/assets\/highered-guests\.js">/);
+  for (const id of routes) {
+    const page = fs.readFileSync(path.join(root,'public',id === 'home' ? '' : id,'index.html'),'utf8');
+    assert.match(page, /class="nav-dropdown-link" href="\/esa-series" data-page="esa-series"/);
   }
 });
