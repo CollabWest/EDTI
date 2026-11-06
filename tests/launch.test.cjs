@@ -144,7 +144,7 @@ test('ESA preserves all nine guests with the Bundled portraits separated in the 
   assert.equal(new Set(images.map(m => m[1])).size, 9);
   assert.deepEqual(images.map(m => m[2]), expected.map(pair => pair[0]));
   assert.match(main, /<h1>ESA Podcast Series<\/h1>/);
-  assert.match(main, /Launching November 2026/);
+  assert.match(main, /New Episodes Tuesdays &amp; Thursdays This November 2026/);
   assert.doesNotMatch(main, /Hosted by|About the Host|Matthew Rascoff|every Tuesday|HigherEd\+Series/);
   assert.match(main, /aria-label="ESA Series guests" tabindex="0"/);
   assert.match(main, /<script defer src="\/assets\/highered-guests\.js">/);
