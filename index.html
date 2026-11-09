@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="/assets/analytics.js" defer></script>
+<script src="/assets/newsletter.js" defer></script>
 <title>Edtech Insiders: Where Edtech's most important conversations happen</title>
 <link rel="icon" type="image/png" href="data:image/png;base64,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">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -391,7 +392,8 @@ footer a:hover{color:#fff}
 audio{width:100%;height:38px;margin-top:.7rem}
 .articles{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch}
 .feat-article{background:var(--navy);color:#fff;border-radius:14px;padding:2.4rem;display:flex;flex-direction:column;justify-content:flex-end;min-height:320px;position:relative;overflow:hidden}
-.feat-article .fa-img{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.38}
+.feat-article .fa-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.38}
+[data-newsletter-story][hidden],[data-newsletter-story] img[hidden]{display:none}
 .feat-article>*{position:relative}
 .feat-article .a-meta{font-size:.8rem;color:#C4CBE0}
 .feat-article h3{color:#fff;font-size:1.6rem;margin:.4rem 0 .6rem}
@@ -768,23 +770,23 @@ audio{width:100%;height:38px;margin-top:.7rem}
       <span class="label">From the newsletter</span>
       <div class="section-head"><h2>The analysis everyone in Edtech is reading.</h2></div>
       <div class="articles">
-        <div class="feat-article">
-          <div class="fa-img" style="background-image:url('https://substackcdn.com/image/fetch/w_1200,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3121ed46-5d5a-45de-8b67-d4ebe7f1b6fa_7339x4656.jpeg')"></div>
-          <span class="a-meta">April 21, 2026 · Sarah Morin, Ben Kornell, Alex Sarlin &amp; Jen Lapaz</span>
-          <h3>The Edtech Insiders Rundown of ASU+GSV 2026</h3>
-          <p>From AI's jagged edges to the skills revolution and the sobering sidebar conversations: what we heard, saw, and couldn't stop thinking about.</p>
-          <a href="https://edtechinsiders.substack.com/p/the-edtech-insiders-rundown-of-asugsv-55b" target="_blank" rel="noopener">Read on Substack →</a>
+        <div class="feat-article" data-newsletter-story="0">
+          <img class="fa-img" src="https://substackcdn.com/image/fetch/w_1000,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2840bcb-8188-4797-8772-5d3d85fc6d56_2048x1152.png" alt="" loading="lazy">
+          <time class="a-meta" datetime="2026-11-06">November 6, 2026</time>
+          <h3 data-story-title>After the Midterms: How New Governors and State Chiefs Will Shape Education Policy in 2027</h3>
+          <p data-story-summary>Election analysis cross-published from Whiteboard Notes, a weekly newsletter produced by Ben Wallerstein, Anna Edwards, and the team at Whiteboard Advisors</p>
+          <a href="https://edtechinsiders.substack.com/p/after-the-midterms-how-new-governors" target="_blank" rel="noopener">Read on Substack →</a>
         </div>
         <div class="article-list">
-          <div class="article-item">
-            <span class="a-meta">Edtech Insiders Newsletter</span>
-            <h4>Exclusive: T4 Education Reveals Top 25 Shortlists for Second Annual Global EdTech Prize</h4>
-            <a href="https://edtechinsiders.substack.com/p/exclusive-t4-education-reveals-top" target="_blank" rel="noopener">Read on Substack →</a>
+          <div class="article-item" data-newsletter-story="1">
+            <time class="a-meta" datetime="2026-11-03">November 3, 2026</time>
+            <h4 data-story-title>ESAs and the Choice Movement</h4>
+            <a href="https://edtechinsiders.substack.com/p/esas-and-the-choice-movement" target="_blank" rel="noopener">Read on Substack →</a>
           </div>
-          <div class="article-item">
-            <span class="a-meta">Edtech Insiders Newsletter</span>
-            <h4>The Three Jobs of Teaching a Child to Read, and Where AI Fits In</h4>
-            <a href="https://edtechinsiders.substack.com/p/the-three-jobs-of-teaching-a-child" target="_blank" rel="noopener">Read on Substack →</a>
+          <div class="article-item" data-newsletter-story="2">
+            <time class="a-meta" datetime="2026-10-29">October 29, 2026</time>
+            <h4 data-story-title>A Conversation with Lin-Manuel Miranda on Arts Education, Teaching, and the Power of Creativity</h4>
+            <a href="https://edtechinsiders.substack.com/p/a-conversation-with-lin-manuel-miranda" target="_blank" rel="noopener">Read on Substack →</a>
           </div>
           <div class="article-item">
             <span class="a-meta">Bi-weekly · Free</span>
@@ -857,16 +859,15 @@ audio{width:100%;height:38px;margin-top:.7rem}
   </div>
   <div class="wrap atl">
     <div class="col col-l">
-      <div class="ed-item">
-        <img src="https://substackcdn.com/image/fetch/w_800,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3121ed46-5d5a-45de-8b67-d4ebe7f1b6fa_7339x4656.jpeg" alt="ASU+GSV 2026" loading="lazy">
-        <span class="credit">Edtech Insiders / ASU+GSV 2026</span>
-        <h3><a href="https://edtechinsiders.substack.com/p/the-edtech-insiders-rundown-of-asugsv-55b" target="_blank" rel="noopener">The Edtech Insiders Rundown of ASU+GSV 2026</a></h3>
-        <span class="byline">Sarah Morin, Ben Kornell &amp; Alex Sarlin</span>
+      <div class="ed-item" data-newsletter-story="0">
+        <img src="https://substackcdn.com/image/fetch/w_1000,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff2840bcb-8188-4797-8772-5d3d85fc6d56_2048x1152.png" alt="" loading="lazy">
+        <h3><a data-story-title href="https://edtechinsiders.substack.com/p/after-the-midterms-how-new-governors" target="_blank" rel="noopener">After the Midterms: How New Governors and State Chiefs Will Shape Education Policy in 2027</a></h3>
+        <time class="byline" datetime="2026-11-06">November 6, 2026</time>
       </div>
-      <div class="ed-item">
-        <img src="https://substackcdn.com/image/fetch/w_800,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbd252243-9788-4394-b1c0-a5cbc70e757f_2240x1260.png" alt="AI in math teaching" loading="lazy">
-        <h3><a href="https://edtechinsiders.substack.com/p/balancing-the-equation-why-ai-in" target="_blank" rel="noopener">Balancing the Equation: Why AI in Math Teaching Cuts Both Ways</a></h3>
-        <span class="byline">Sarah Morin, Alex Sarlin &amp; Ben Kornell</span>
+      <div class="ed-item" data-newsletter-story="1">
+        <img src="https://substackcdn.com/image/fetch/w_1000,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcf9acd29-1c2c-4992-a440-ffffd48a806d_6750x3375.png" alt="" loading="lazy">
+        <h3><a data-story-title href="https://edtechinsiders.substack.com/p/esas-and-the-choice-movement" target="_blank" rel="noopener">ESAs and the Choice Movement</a></h3>
+        <time class="byline" datetime="2026-11-03">November 3, 2026</time>
       </div>
     </div>
     <div class="col col-c ed-feat">
@@ -888,12 +889,13 @@ audio{width:100%;height:38px;margin-top:.7rem}
         <div><h4><a href="https://www.buzzsprout.com/1877869/episodes/19480747" target="_blank" rel="noopener">Why Kids Should Help Design EdTech: Inside the Cooney Center's Co-Design Movement</a></h4><span class="byline">The Podcast</span></div>
         <img src="https://storage.buzzsprout.com/uiktgxvyeylokiaimp6uy6ppybt1?.jpg" alt="" loading="lazy">
       </div>
-      <div class="ed-mini">
-        <div><h4><a href="https://edtechinsiders.substack.com/p/theres-more-to-ai-grading-than-scoring" target="_blank" rel="noopener">There's More to AI Grading Than Scoring</a></h4><span class="byline">The Newsletter</span></div>
-        <img src="https://substackcdn.com/image/fetch/w_320,h_320,c_fill,f_auto,q_auto:good,g_center/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fce0015b2-62a1-463d-b58e-65ef32906c86_2240x1260.png" alt="" loading="lazy">
+      <div class="ed-mini" data-newsletter-story="2">
+        <div><h4><a data-story-title href="https://edtechinsiders.substack.com/p/a-conversation-with-lin-manuel-miranda" target="_blank" rel="noopener">A Conversation with Lin-Manuel Miranda on Arts Education, Teaching, and the Power of Creativity</a></h4><time class="byline" datetime="2026-10-29">October 29, 2026</time></div>
+        <img src="https://substackcdn.com/image/fetch/w_1000,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8d373a69-d10b-42d9-8fc6-232ca980cbbe_1064x1092.jpeg" alt="" loading="lazy">
       </div>
-      <div class="ed-mini" style="border-bottom:none">
-        <div><h4><a href="https://edtechinsiders.substack.com/p/exclusive-t4-education-reveals-top" target="_blank" rel="noopener">Exclusive: T4 Education Reveals Top 25 Shortlists for Global EdTech Prize</a></h4><span class="byline">The Newsletter</span></div>
+      <div class="ed-mini" data-newsletter-story="3" style="border-bottom:none">
+        <div><h4><a data-story-title href="https://edtechinsiders.substack.com/p/takeaways-from-edtech-week-evidence" target="_blank" rel="noopener">Takeaways from EDTECH WEEK: Evidence Gets You In. Outcomes Get You Renewed. AI Gets Vetted.</a></h4><time class="byline" datetime="2026-10-23">October 23, 2026</time></div>
+        <img src="https://substackcdn.com/image/fetch/w_1000,c_limit,f_auto,q_auto:good/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F2ee9b134-7d65-4b66-b6f8-6d5ad4a3aab1_6240x3512.jpeg" alt="" loading="lazy">
       </div>
       <div class="ed-promo">
         <span class="ep-label">Insiders Plus</span>
@@ -984,11 +986,11 @@ audio{width:100%;height:38px;margin-top:.7rem}
       <span class="label">The Newsletter</span>
       <div class="section-head"><h2>The briefing that keeps you ahead of the curve.</h2></div>
       <div class="row-list">
-        <div class="row-item"><div><div class="ri-meta">July 21, 2026</div><div class="ri-title">Exclusive: T4 Education Reveals Top 25 Shortlists for Second Annual Global EdTech Prize</div></div><a href="https://edtechinsiders.substack.com/p/exclusive-t4-education-reveals-top" target="_blank" rel="noopener">Read →</a></div>
-        <div class="row-item"><div><div class="ri-meta">July 2026</div><div class="ri-title">The World Cup: Can America Afford to Play?</div></div><a href="https://edtechinsiders.substack.com/p/the-world-cup-can-america-afford" target="_blank" rel="noopener">Read →</a></div>
-        <div class="row-item"><div><div class="ri-meta">July 2026</div><div class="ri-title">The Three Jobs of Teaching a Child to Read, and Where AI Fits In</div></div><a href="https://edtechinsiders.substack.com/p/the-three-jobs-of-teaching-a-child" target="_blank" rel="noopener">Read →</a></div>
-        <div class="row-item"><div><div class="ri-meta">June 25, 2026</div><div class="ri-title">Balancing the Equation: Why AI in Math Teaching Cuts Both Ways</div></div><a href="https://edtechinsiders.substack.com/p/balancing-the-equation-why-ai-in" target="_blank" rel="noopener">Read →</a></div>
-        <div class="row-item"><div><div class="ri-meta">June 11, 2026</div><div class="ri-title">There's More to AI Grading Than Scoring</div></div><a href="https://edtechinsiders.substack.com/p/theres-more-to-ai-grading-than-scoring" target="_blank" rel="noopener">Read →</a></div>
+        <div class="row-item" data-newsletter-story="4"><div><time class="ri-meta" datetime="2026-10-21">October 21, 2026</time><div class="ri-title" data-story-title>3 Days To Go: Inside Google’s Approach to Learning Impact</div></div><a href="https://edtechinsiders.substack.com/p/2-days-to-go-inside-googles-approach" target="_blank" rel="noopener">Read →</a></div>
+        <div class="row-item" data-newsletter-story="5"><div><time class="ri-meta" datetime="2026-10-15">October 15, 2026</time><div class="ri-title" data-story-title>A Conversation with Reed Hastings on AI, Education, and the Future of Learning</div></div><a href="https://edtechinsiders.substack.com/p/a-conversation-with-reed-hastings" target="_blank" rel="noopener">Read →</a></div>
+        <div class="row-item" data-newsletter-story="6"><div><time class="ri-meta" datetime="2026-10-14">October 14, 2026</time><div class="ri-title" data-story-title>Inside Google’s Approach to Learning Impact</div></div><a href="https://edtechinsiders.substack.com/p/inside-googles-approach-to-learning" target="_blank" rel="noopener">Read →</a></div>
+        <div class="row-item" data-newsletter-story="7"><div><time class="ri-meta" datetime="2026-10-09">October 9, 2026</time><div class="ri-title" data-story-title>Building Responsibly: The Learning Science Behind Google’s Learning Tools</div></div><a href="https://edtechinsiders.substack.com/p/building-responsibly-the-learning" target="_blank" rel="noopener">Read →</a></div>
+        <div class="row-item" data-newsletter-story="8"><div><time class="ri-meta" datetime="2026-10-07">October 7, 2026</time><div class="ri-title" data-story-title>How Google Measures Learning Impact in the Age of AI</div></div><a href="https://edtechinsiders.substack.com/p/how-google-measures-learning-impact" target="_blank" rel="noopener">Read →</a></div>
       </div>
       <p style="margin-top:1.2rem"><a href="https://edtechinsiders.substack.com/archive" target="_blank" rel="noopener" style="font-weight:600">Browse the full archive →</a></p>
       <figure class="editorial-pullquote">
