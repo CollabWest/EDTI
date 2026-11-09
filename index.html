@@ -1860,10 +1860,23 @@ audio{width:100%;height:38px;margin-top:.7rem}
   var menu=document.querySelector('.menu-btn');
   var links=document.querySelector('.nav-links');
   if(!group||!toggle||!panel||!menu||!links)return;
-  function setOpen(open){toggle.setAttribute('aria-expanded',String(open));panel.hidden=!open;}
+  var hoverMenu = window.matchMedia('(hover:hover) and (min-width:681px)');
+  var closeTimer;
+  function setOpen(open) {
+    window.clearTimeout(closeTimer);
+    toggle.setAttribute('aria-expanded', String(open));
+    panel.hidden = !open;
+  }
   toggle.addEventListener('click',function(){setOpen(toggle.getAttribute('aria-expanded')!=='true');});
-  group.addEventListener('mouseenter',function(){if(window.matchMedia('(hover:hover) and (min-width:681px)').matches)setOpen(true);});
-  group.addEventListener('mouseleave',function(){if(window.matchMedia('(hover:hover) and (min-width:681px)').matches&&!group.contains(document.activeElement))setOpen(false);});
+  group.addEventListener('mouseenter', function () {
+    if (hoverMenu.matches) setOpen(true);
+  });
+  group.addEventListener('mouseleave', function () {
+    if (!hoverMenu.matches || panel.hidden || group.contains(document.activeElement)) return;
+    closeTimer = window.setTimeout(function () {
+      if (!group.contains(document.activeElement)) setOpen(false);
+    }, 350);
+  });
   group.addEventListener('focusout',function(event){if(!group.contains(event.relatedTarget))setOpen(false);});
   document.addEventListener('click',function(event){if(!group.contains(event.target))setOpen(false);});
   document.addEventListener('keydown',function(event){if(event.key==='Escape'&&!panel.hidden){setOpen(false);toggle.focus();}});
