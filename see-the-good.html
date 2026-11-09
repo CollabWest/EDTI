@@ -22,5 +22,15 @@
     <h2>Big ideas. Small beginnings. Everywhere.</h2>
     <p>Explore student projects using AI for good around the world.</p>
   </div>
-  <iframe class="stg-globe" title="Interactive globe of student projects" src="/assets/see-the-good/globe.html" loading="eager"></iframe>
+  <div class="stg-globe-experience" data-stg-globe>
+    <div class="stg-globe-controls">
+      <div class="stg-categories" data-stg-categories></div>
+      <div class="stg-map-guide"><span><b>↔</b> Drag to rotate</span><span class="stg-pin-key">Project locations</span></div>
+    </div>
+    <div class="stg-globe-layout">
+      <canvas data-stg-canvas role="img" aria-label="Interactive draggable globe with student project markers"></canvas>
+    </div>
+    <aside class="stg-detail" data-stg-detail aria-live="polite"></aside>
+  </div>
 </section>
+<script src="/assets/see-the-good/globe.js" defer></script>
