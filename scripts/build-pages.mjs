@@ -28,8 +28,6 @@ let page = source
   .replace(/<main>[\s\S]*?<\/main>/, `<main>\n${section}\n</main>`)
   // Other sections remain at the site root until the wider SEO migration.
   .replace(/href="#(home|media|research|events|partners|partner-form|about|podcast|newsletter|plus)"/g, 'href="/#$1"');
-// The series has no guest wall or latest-episode widgets, so skip their feed.
-page = page.replace("  var FEED='https://feeds.buzzsprout.com/1877869.rss';", "  if(!document.getElementById('page-media')&&!document.getElementById('page-home'))return;\n  var FEED='https://feeds.buzzsprout.com/1877869.rss';");
 const destination = path.join(root, 'higher-education-series');
 mkdirSync(destination, { recursive: true });
 writeFileSync(path.join(destination, 'index.html'), page);

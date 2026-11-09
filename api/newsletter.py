@@ -72,7 +72,10 @@ def parse_stories(feed):
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            request = Request(FEED_URL, headers={"Accept": "application/rss+xml, application/xml"})
+            request = Request(FEED_URL, headers={
+                "Accept": "application/rss+xml, application/xml",
+                "User-Agent": "EdtechInsiders/1.0 (public RSS reader)",
+            })
             with urlopen(request, timeout=5) as response:
                 feed = response.read(MAX_FEED_BYTES + 1)
             if len(feed) > MAX_FEED_BYTES:

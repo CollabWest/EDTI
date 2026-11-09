@@ -68,7 +68,6 @@ for (const [id, route, title, description] of pages) {
     .replace(/<main>[\s\S]*?<\/main>/, `<main>\n${prepareSection(id)}\n</main>`)
     .replace(/href="#(home|media|research|events|partners|partner-form|about|podcast|newsletter|plus)"/g, (_, key) => `href="${routes[key]}"`)
     .replace(/(src|href)="assets\//g, '$1="/assets/');
-  page = page.replace("  var FEED='https://feeds.buzzsprout.com/1877869.rss';", "  if(!document.querySelector('.guest-tile')&&!document.getElementById('episode-list')&&!document.getElementById('hero-epi'))return;\n  var FEED='https://feeds.buzzsprout.com/1877869.rss';");
   const directory = path.join(output, route.slice(1));
   mkdirSync(directory, { recursive: true });
   writeFileSync(path.join(directory, 'index.html'), page);
