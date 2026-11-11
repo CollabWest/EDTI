@@ -6,8 +6,8 @@
   function simplifySnapshot(){
     const category=detail.querySelector('.category');
     const summary=detail.querySelector('.stg-story-body p');
-    if(category)category.textContent='Project snapshot · '+category.textContent.split('·').pop().trim();
-    if(summary)summary.textContent=summary.textContent.replace(/ This project is part of the working research pool[\s\S]*/, '');
+    if(category&&!category.textContent.startsWith('Project snapshot · '))category.textContent='Project snapshot · '+category.textContent.split('·').pop().trim();
+    if(summary&&/ This project is part of the working research pool/.test(summary.textContent))summary.textContent=summary.textContent.replace(/ This project is part of the working research pool[\s\S]*/, '');
     detail.querySelector('.stg-story-toggle')?.remove();
     detail.querySelector('.stg-story-more')?.remove();
     detail.querySelector('.stg-story-nav')?.remove();
