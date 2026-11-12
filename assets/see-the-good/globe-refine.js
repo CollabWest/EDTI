@@ -11,6 +11,16 @@
     }
   };
 
+  const categoryArtwork={
+    'Accessibility & Care':'/assets/see-the-good/category-accessibility-care.svg',
+    'Health & Science':'/assets/see-the-good/category-health-science.svg',
+    'Climate & Environment':'/assets/see-the-good/category-climate-environment.svg',
+    'Community Problem-Solvers':'/assets/see-the-good/category-community-problem-solvers.svg',
+    'Reinventing Learning':'/assets/see-the-good/category-reinventing-learning.svg',
+    'Student Voice & Agency':'/assets/see-the-good/category-student-voice-agency.svg',
+    'Creativity & Storytelling':'/assets/see-the-good/category-creativity-storytelling.svg'
+  };
+
   function simplifySnapshot(){
     const category=detail.querySelector('.category');
     const summary=detail.querySelector('.stg-story-body p');
@@ -27,14 +37,19 @@
       const title=card.querySelector('h4')?.textContent||'';
       const category=card.querySelector('.stg-project-card-category')?.textContent||'Student project';
       const photo=photos[title];
+      const categoryArt=categoryArtwork[category];
       const media=document.createElement('div');
-      media.className='stg-project-card-media'+(photo?' has-photo':'');
+      media.className='stg-project-card-media'+(photo||categoryArt?' has-photo':'');
       if(photo){
         const image=document.createElement('img');
         image.src=photo.src; image.alt=photo.alt; image.loading='lazy';
         const credit=document.createElement('span');
         credit.className='stg-project-card-credit'; credit.textContent=photo.credit;
         media.append(image,credit);
+      }else if(categoryArt){
+        const image=document.createElement('img');
+        image.src=categoryArt; image.alt=''; image.loading='lazy';
+        media.appendChild(image);
       }else{
         const kicker=document.createElement('span');
         kicker.textContent=category;
