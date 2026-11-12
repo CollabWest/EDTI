@@ -52,3 +52,21 @@
 @media(max-width:760px){
   .stg-project-list .stg-project-card{display:flex}
 }
+
+/* Compact the split cards so the project index is easy to scan. */
+@media(min-width:761px){
+  .stg-project-list .stg-project-card,
+  .stg-project-list .stg-project-card:nth-child(even),
+  .stg-project-list .stg-project-card:first-child{
+    grid-template-columns:minmax(170px,39%) minmax(0,61%);
+    min-height:238px;
+  }
+  .stg-project-list .stg-project-card-media,
+  .stg-project-list .stg-project-card:first-child .stg-project-card-media{min-height:238px}
+  .stg-project-list .stg-project-card-category{margin-top:1rem;margin-bottom:.45rem}
+  .stg-project-list .stg-project-card h4,
+  .stg-project-list .stg-project-card:first-child h4{font-size:clamp(1.25rem,1.55vw,1.6rem)}
+  .stg-project-list .stg-project-card-meta{margin-top:.5rem}
+  .stg-project-list .stg-project-card .stg-project-card-summary{font-size:.88rem;line-height:1.45;margin-top:.75rem!important;margin-bottom:.8rem!important}
+  .stg-project-list .stg-project-card-toggle{min-height:38px;margin-bottom:1rem}
+}
