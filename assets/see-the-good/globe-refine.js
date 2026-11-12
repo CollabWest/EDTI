@@ -75,6 +75,16 @@
         media.appendChild(credit);
       }
       card.prepend(media);
+      const action=card.querySelector('.stg-project-card-toggle');
+      if(action&&team){
+        const visit=document.createElement('a');
+        visit.className=action.className;
+        visit.href='/api/project-image?team='+encodeURIComponent(team)+'&destination=source';
+        visit.target='_blank';
+        visit.rel='noopener noreferrer';
+        visit.textContent='Visit their site ↗';
+        action.replaceWith(visit);
+      }
     });
   }
 
