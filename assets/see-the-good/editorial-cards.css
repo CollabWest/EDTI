@@ -1,0 +1,14 @@
+/* Editorial media layer for the student-project index. */
+.stg-project-card{padding-top:0!important}
+.stg-project-card-media{order:-1;width:100%;height:176px;margin:0 0 1.45rem;background:linear-gradient(135deg,#ececff 0%,#dce6ff 48%,#d7f4ed 100%);display:flex;align-items:flex-end;padding:1.15rem;overflow:hidden;position:relative}
+.stg-project-card:nth-child(3n+2) .stg-project-card-media{background:linear-gradient(135deg,#f9e5bd 0%,#f7cbd7 54%,#e0dcff 100%)}
+.stg-project-card:nth-child(3n) .stg-project-card-media{background:linear-gradient(135deg,#d6f5eb 0%,#cde5ff 54%,#f0dcff 100%)}
+.stg-project-card-media>span{color:var(--stg-deep);font:700 .64rem/1.25 var(--stg-sans);letter-spacing:.12em;text-transform:uppercase;max-width:14ch}
+.stg-project-card-media.has-photo{padding:0;background:#e6e9ef}
+.stg-project-card-media img{width:100%;height:100%;object-fit:cover;display:block}
+.stg-project-card-credit{position:absolute;right:.65rem;bottom:.55rem;color:#fff;font:600 .58rem/1 var(--stg-sans);letter-spacing:.04em;text-shadow:0 1px 6px rgba(0,0,0,.75)}
+.stg-project-card:first-child{grid-column:1/-1;min-height:0;padding:0 0 2.3rem}
+.stg-project-card:first-child .stg-project-card-media{height:300px;margin-bottom:1.9rem}
+.stg-project-card:first-child h4{font-size:clamp(2rem,3.4vw,3.15rem);max-width:18ch}
+.stg-project-card:first-child .stg-project-card-summary{font-size:1.02rem;max-width:62ch}
+@media(max-width:600px){.stg-project-card-media{height:190px}.stg-project-card:first-child .stg-project-card-media{height:240px}.stg-project-card:first-child{padding-bottom:1.8rem}}
