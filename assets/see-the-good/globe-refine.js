@@ -31,26 +31,27 @@
     detail.querySelector('.stg-story-nav')?.remove();
   }
 
-  function renderCategoryGallery(){
-    if(!gallery||gallery.childElementCount)return;
-    Object.entries(categoryArtwork).forEach(([category,src])=>{
-      const button=document.createElement('button');
-      button.className='stg-category-card';
-      button.type='button';
-      button.setAttribute('aria-label','Explore '+category+' projects');
-      const image=document.createElement('img');
-      image.src=src; image.alt=''; image.loading='lazy';
-      const label=document.createElement('span');
-      label.textContent=category;
-      button.append(image,label);
-      button.addEventListener('click',()=>{
-        const filter=[...document.querySelectorAll('[data-stg-index-categories] button')].find(item=>item.textContent===category);
-        filter?.click();
-        index.scrollIntoView({block:'start',behavior:'smooth'});
-      });
-      gallery.appendChild(button);
-    });
+  function updateCategoryHero(category){
+    if(!gallery)return;
+    const src=categoryArtwork[category];
+    if(!src){
+      gallery.hidden=true;
+      gallery.replaceChildren();
+      return;
+    }
+    gallery.hidden=false;
+    const image=document.createElement('img');
+    image.src=src; image.alt='';
+    const label=document.createElement('p');
+    label.textContent=category;
+    gallery.replaceChildren(image,label);
   }
+
+  document.querySelector('[data-stg-index-categories]')?.addEventListener('click',event=>{
+    const filter=event.target.closest('button');
+    if(!filter)return;
+    requestAnimationFrame(()=>updateCategoryHero(filter.textContent));
+  });
 
   function decorateCards(){
     [...index.querySelectorAll('.stg-project-card')].forEach(card=>{
@@ -98,7 +99,7 @@
   new MutationObserver(simplifySnapshot).observe(detail,{childList:true,subtree:true});
   new MutationObserver(()=>{decorateCards();limitIndex();}).observe(index,{childList:true});
   simplifySnapshot();
-  renderCategoryGallery();
+  updateCategoryHero('All projects');
   decorateCards();
   limitIndex();
 })();
