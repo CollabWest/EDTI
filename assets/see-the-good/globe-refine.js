@@ -1,6 +1,7 @@
 (()=>{
   const detail=document.querySelector('[data-stg-detail]');
   const index=document.querySelector('[data-stg-project-chips]');
+  const gallery=document.querySelector('[data-stg-category-gallery]');
   if(!detail||!index)return;
 
   const photos={
@@ -10,7 +11,6 @@
       credit:'Spectrum News / Jo Kwon'
     }
   };
-
   const categoryArtwork={
     'Accessibility & Care':'/assets/see-the-good/category-accessibility-care.svg',
     'Health & Science':'/assets/see-the-good/category-health-science.svg',
@@ -31,29 +31,46 @@
     detail.querySelector('.stg-story-nav')?.remove();
   }
 
+  function renderCategoryGallery(){
+    if(!gallery||gallery.childElementCount)return;
+    Object.entries(categoryArtwork).forEach(([category,src])=>{
+      const button=document.createElement('button');
+      button.className='stg-category-card';
+      button.type='button';
+      button.setAttribute('aria-label','Explore '+category+' projects');
+      const image=document.createElement('img');
+      image.src=src; image.alt=''; image.loading='lazy';
+      const label=document.createElement('span');
+      label.textContent=category;
+      button.append(image,label);
+      button.addEventListener('click',()=>{
+        const filter=[...document.querySelectorAll('[data-stg-index-categories] button')].find(item=>item.textContent===category);
+        filter?.click();
+        index.scrollIntoView({block:'start',behavior:'smooth'});
+      });
+      gallery.appendChild(button);
+    });
+  }
+
   function decorateCards(){
     [...index.querySelectorAll('.stg-project-card')].forEach(card=>{
       if(card.querySelector('.stg-project-card-media'))return;
       const title=card.querySelector('h4')?.textContent||'';
-      const category=card.querySelector('.stg-project-card-category')?.textContent||'Student project';
+      const team=(card.querySelector('.stg-project-card-meta span:first-child')?.textContent||'').replace(/^Student team:\s*/,'').trim();
       const photo=photos[title];
-      const categoryArt=categoryArtwork[category];
+      if(!photo&&!team)return;
       const media=document.createElement('div');
-      media.className='stg-project-card-media'+(photo||categoryArt?' has-photo':'');
+      media.className='stg-project-card-media has-photo';
+      const image=document.createElement('img');
+      image.src=photo?photo.src:'/api/project-image?team='+encodeURIComponent(team);
+      image.alt=photo?photo.alt:'';
+      image.loading='lazy';
+      image.addEventListener('error',()=>media.remove(),{once:true});
+      media.appendChild(image);
       if(photo){
-        const image=document.createElement('img');
-        image.src=photo.src; image.alt=photo.alt; image.loading='lazy';
         const credit=document.createElement('span');
         credit.className='stg-project-card-credit'; credit.textContent=photo.credit;
-        media.append(image,credit);
-      }else if(categoryArt){
-        const image=document.createElement('img');
-        image.src=categoryArt; image.alt=''; image.loading='lazy';
-        media.appendChild(image);
-      }else{
-        const kicker=document.createElement('span');
-        kicker.textContent=category;
-        media.appendChild(kicker);
+        media.appendChild(credit);
       }
       card.prepend(media);
     });
@@ -81,6 +98,7 @@
   new MutationObserver(simplifySnapshot).observe(detail,{childList:true,subtree:true});
   new MutationObserver(()=>{decorateCards();limitIndex();}).observe(index,{childList:true});
   simplifySnapshot();
+  renderCategoryGallery();
   decorateCards();
   limitIndex();
 })();
