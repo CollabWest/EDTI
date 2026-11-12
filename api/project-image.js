@@ -115,6 +115,7 @@ export default async function handler(request,response){
   const team=typeof request.query.team==='string'?request.query.team:'';
   const source=SOURCES[team];
   if(!source)return response.status(404).end();
+  if(request.query.destination==='source')return response.redirect(302,source);
   try{
     const upstream=await fetch(source,{headers:{'User-Agent':'Mozilla/5.0 (compatible; EdtechInsidersPreview/1.0)','Accept':'text/html,application/xhtml+xml'},redirect:'follow'});
     if(!upstream.ok)return response.status(404).end();
