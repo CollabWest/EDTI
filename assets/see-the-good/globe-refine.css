@@ -34,3 +34,10 @@
   .stg-globe-section .stg-project-list{margin-top:-42px}
   .stg-globe-popup:before,.stg-globe-popup:after{display:none}
 }
+
+@media(min-width:801px){
+  .stg-globe-layout{
+    transform:translateY(var(--stg-globe-shift,0));
+    will-change:transform;
+  }
+}
