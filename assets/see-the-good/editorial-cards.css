@@ -14,3 +14,7 @@
 .stg-project-card-more{display:none}
 @media(max-width:1000px){.stg-project-chips{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.stg-project-chips{grid-template-columns:1fr;gap:1.1rem}.stg-project-card-media,.stg-project-card:first-child .stg-project-card-media{height:220px}.stg-project-card-category,.stg-project-card h4,.stg-project-card-meta,.stg-project-card-summary,.stg-project-card-toggle,.stg-project-card-more{margin-left:1.1rem;margin-right:1.1rem}}
+
+/* Keep the editorial summary in the same text column as the title and metadata. */
+.stg-project-list .stg-project-card .stg-project-card-summary{box-sizing:border-box;width:auto;max-width:none;margin:1rem 1.35rem 1.25rem!important}
+@media(max-width:600px){.stg-project-list .stg-project-card .stg-project-card-summary{margin-left:1.1rem!important;margin-right:1.1rem!important}}
