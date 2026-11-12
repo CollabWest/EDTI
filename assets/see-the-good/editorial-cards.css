@@ -70,3 +70,14 @@
   .stg-project-list .stg-project-card .stg-project-card-summary{font-size:.88rem;line-height:1.45;margin-top:.75rem!important;margin-bottom:.8rem!important}
   .stg-project-list .stg-project-card-toggle{min-height:38px;margin-bottom:1rem}
 }
+
+/* Source links are secondary editorial actions. */
+.stg-project-list .stg-project-card-toggle{
+  background:#fff!important;
+  border-color:var(--stg-blue)!important;
+  color:var(--stg-blue)!important;
+}
+.stg-project-list .stg-project-card-toggle:hover{
+  background:var(--stg-blue)!important;
+  color:#fff!important;
+}
