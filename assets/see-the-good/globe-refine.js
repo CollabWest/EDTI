@@ -12,6 +12,7 @@
     }
   };
   const categoryArtwork={
+    'All projects':'/assets/see-the-good/category-all-projects.svg',
     'Accessibility & Care':'/assets/see-the-good/category-accessibility-care.svg',
     'Health & Science':'/assets/see-the-good/category-health-science.svg',
     'Climate & Environment':'/assets/see-the-good/category-climate-environment.svg',
