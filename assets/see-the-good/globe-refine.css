@@ -65,3 +65,6 @@
 .stg-globe-section .stg-index-eyebrow,
 .stg-globe-section .stg-project-list h3,
 .stg-globe-section .stg-index-intro{position:relative;z-index:2;visibility:visible;opacity:1}
+
+/* The editorial section now belongs to the sticky scene; do not add empty runway after it. */
+.stg-globe-experience{padding-bottom:0!important}
