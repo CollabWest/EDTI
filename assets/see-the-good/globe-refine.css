@@ -58,3 +58,10 @@
     transform:none!important;
   }
 }
+
+/* Keep the editorial copy above the globe at every point in the scroll scene. */
+.stg-globe-section .stg-project-list{z-index:10!important;isolation:isolate}
+.stg-globe-section .stg-project-list-inner{position:relative;z-index:1}
+.stg-globe-section .stg-index-eyebrow,
+.stg-globe-section .stg-project-list h3,
+.stg-globe-section .stg-index-intro{position:relative;z-index:2;visibility:visible;opacity:1}
