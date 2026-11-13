@@ -41,3 +41,12 @@
     will-change:transform;
   }
 }
+
+/* Once the globe is fully in view, hold it at the visual center while editorial content passes over it. */
+@media(min-width:801px){
+  .stg-globe-layout{
+    top:calc(50vh + 37px);
+    transform:translateY(-50%)!important;
+    will-change:transform;
+  }
+}
