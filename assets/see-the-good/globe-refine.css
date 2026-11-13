@@ -50,3 +50,11 @@
     will-change:transform;
   }
 }
+
+/* True sticky centering: use the live globe height to set the sticky anchor itself. */
+@media(min-width:801px){
+  .stg-globe-layout{
+    top:calc((100vh - var(--stg-globe-height))/2 + 37px)!important;
+    transform:none!important;
+  }
+}
