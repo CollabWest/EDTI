@@ -22,7 +22,7 @@ const pins=[[-74,41,1],[-122,38,1],[-70,43,1],[-3,52,1],[77,28,1],[139,35,1],[15
 const directions={
  sky:{step:2.5,colors:['#42cfc0','#80b8ff'],shape:'dot'},
  simple:{step:3.7,colors:['#586fce'],shape:'dot'},
- dense:{step:1.65,colors:['#285f9f','#4d89c4','#9fc0df'],shape:'hex'}
+ dense:{step:1.65,colors:['#6eff3d','#21c9ee','#a75cff','#ff3ebf','#ffe15e','#ff7b38','#21d7a5','#f3dbdf','#256dff','#d7ceff'],shape:'hex'}
 };
 const caches={};
 function pt(lon,lat,cx,cy,r){const L=(lon-rot)*Math.PI/180,p=lat*Math.PI/180;return{x:cx+Math.cos(p)*Math.sin(L)*r,y:cy-Math.sin(p)*r,z:Math.cos(p)*Math.cos(L)}}
