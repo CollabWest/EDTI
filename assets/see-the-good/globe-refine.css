@@ -68,3 +68,8 @@
 
 /* The editorial section now belongs to the sticky scene; do not add empty runway after it. */
 .stg-globe-experience{padding-bottom:0!important}
+
+/* Let the full globe be seen before Front Runners begins its cover transition. */
+@media(min-width:801px){
+  .stg-globe-section .stg-project-list{margin-top:0!important}
+}
