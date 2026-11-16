@@ -73,3 +73,8 @@
 @media(min-width:801px){
   .stg-globe-section .stg-project-list{margin-top:0!important}
 }
+
+/* Give the category collages enough room to read as a scene before the filters. */
+.stg-category-gallery{height:clamp(300px,36vw,500px)}
+.stg-category-gallery img{object-position:center center}
+.stg-index-categories{margin-top:1.6rem}
