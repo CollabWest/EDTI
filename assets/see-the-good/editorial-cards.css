@@ -81,3 +81,19 @@
   background:var(--stg-blue)!important;
   color:#fff!important;
 }
+
+
+/* Two-up compact project cards: image column alongside the editorial story. */
+@media(min-width:761px){
+  .stg-project-chips{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+  .stg-project-list .stg-project-card,
+  .stg-project-list .stg-project-card:nth-child(even),
+  .stg-project-list .stg-project-card:first-child{
+    grid-template-columns:minmax(132px,29%) minmax(0,71%);
+    min-height:224px;
+  }
+  .stg-project-list .stg-project-card-media,
+  .stg-project-list .stg-project-card:first-child .stg-project-card-media{
+    min-height:224px;
+  }
+}
