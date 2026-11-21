@@ -113,3 +113,13 @@
   nav .nav-inner{max-width:1440px}
   nav .nav-links{flex-wrap:nowrap}
 }
+
+
+.stg-globe-popup-tagline{
+  margin:.15rem 0 .48rem;
+  color:var(--stg-deep);
+  font:600 .78rem/1.35 var(--stg-sans);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
