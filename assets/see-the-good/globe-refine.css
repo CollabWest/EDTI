@@ -123,3 +123,15 @@
   text-overflow:ellipsis;
   white-space:nowrap;
 }
+
+
+/* Preserve the whole desktop hero image while reducing its visual height. */
+@media(min-width:801px){
+  .stg-hero{background:#f5e3d5}
+  .stg-hero>img{
+    display:block;
+    width:85%;
+    height:auto;
+    margin-inline:auto;
+  }
+}
