@@ -97,3 +97,24 @@
     min-height:224px;
   }
 }
+
+
+/* One-line project descriptors */
+.stg-project-list .stg-project-card-tagline{
+  margin:.38rem 1.35rem 0;
+  color:var(--stg-muted);
+  font:600 .78rem/1.35 var(--stg-sans);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+@media(min-width:761px){
+  .stg-project-list .stg-project-card-tagline{grid-column:2;grid-row:3;margin-top:.36rem}
+  .stg-project-list .stg-project-card-meta{grid-row:4}
+  .stg-project-list .stg-project-card .stg-project-card-summary{grid-row:5}
+  .stg-project-list .stg-project-card-toggle{grid-row:6}
+  .stg-project-list .stg-project-card,
+  .stg-project-list .stg-project-card:nth-child(even),
+  .stg-project-list .stg-project-card:first-child{grid-template-rows:auto auto auto auto minmax(0,1fr) auto}
+}
+@media(max-width:600px){.stg-project-list .stg-project-card-tagline{margin-left:1.1rem;margin-right:1.1rem}}
