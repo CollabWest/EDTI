@@ -5,6 +5,7 @@ import path from 'node:path';
 // One initial-HTML page per address, preserving the approved shared layout.
 const root = fileURLToPath(new URL('../', import.meta.url));
 const source = readFileSync(path.join(root, 'index.html'), 'utf8');
+const campaign = readFileSync(path.join(root, 'see-the-good.html'), 'utf8');
 const output = path.join(root, 'public');
 const origin = 'https://www.edtechinsiders.org';
 const pages = [
@@ -17,6 +18,7 @@ const pages = [
   ['partners', '/partners', 'Partnerships | Edtech Insiders', 'Explore brand awareness, thought leadership, and convening partnerships with Edtech Insiders.'],
   ['partner-form', '/partner-form', 'Start a Partnership Conversation | Edtech Insiders', 'Contact the team about a sponsorship, research project, event, or custom partnership.'],
   ['about', '/about', 'About Edtech Insiders | Alex Sarlin & Ben Kornell', 'Meet co-founders Alex Sarlin and Ben Kornell and learn about Edtech Insiders media and community.'],
+  ['see-the-good', '/see-the-good', 'See the good. Be the good. | Edtech Insiders', 'Celebrating students using AI to change the world.'],
 ];
 const routes = Object.fromEntries(pages.map(([id, route]) => [id, route]));
 Object.assign(routes, { podcast: '/media', newsletter: '/media', plus: '/media' });
@@ -59,13 +61,23 @@ function prepareSection(id) {
   return section;
 }
 
+function prepareCampaignPage() {
+  const nav = source.match(/<nav>[\s\S]*?<\/nav>/)?.[0];
+  const footer = source.match(/<footer>[\s\S]*?<\/footer>/)?.[0];
+  if (!nav || !footer) throw new Error('Shared navigation or footer is missing.');
+  return source
+    .replace('</head>', '<link rel="stylesheet" href="/assets/see-the-good.css">\n</head>')
+    .replace(/<body>[\s\S]*?<\/body>/, `<body>\n${nav}\n<main>${campaign}</main>\n${footer}\n</body>`);
+}
+
 mkdirSync(output, { recursive: true });
 cpSync(path.join(root, 'assets'), path.join(output, 'assets'), { recursive: true });
 for (const [id, route, title, description] of pages) {
   const canonical = origin + route;
   const metadata = `<title>${escape(title)}</title>\n<meta name="description" content="${escape(description)}">\n<link rel="canonical" href="${canonical}">\n<meta property="og:type" content="website">\n<meta property="og:title" content="${escape(title)}">\n<meta property="og:description" content="${escape(description)}">\n<meta property="og:url" content="${canonical}">\n<meta property="og:site_name" content="Edtech Insiders">`;
-  let page = source.replace(/<title>[\s\S]*?<\/title>/, metadata)
-    .replace(/<main>[\s\S]*?<\/main>/, `<main>\n${prepareSection(id)}\n</main>`)
+  let page = (id === 'see-the-good' ? prepareCampaignPage() : source)
+    .replace(/<title>[\s\S]*?<\/title>/, metadata)
+    .replace(/<main>[\s\S]*?<\/main>/, id === 'see-the-good' ? `<main>${campaign}</main>` : `<main>\n${prepareSection(id)}\n</main>`)
     .replace(/href="#(home|media|research|events|partners|partner-form|about|podcast|newsletter|plus)"/g, (_, key) => `href="${routes[key]}"`)
     .replace(/(src|href)="assets\//g, '$1="/assets/');
   const directory = path.join(output, route.slice(1));

@@ -16,6 +16,7 @@
     { "source": "/partners", "destination": "/partners/index.html" },
     { "source": "/partner-form", "destination": "/partner-form/index.html" },
     { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/see-the-good", "destination": "/see-the-good/index.html" },
     {
       "source": "/higher-education-series",
       "destination": "/higher-education-series/index.html"
