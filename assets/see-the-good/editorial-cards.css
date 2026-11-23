@@ -53,9 +53,9 @@
   background:#fff!important;
   color:#170854!important;
   cursor:pointer;
-  font:600 13.5px/1.2 "DM Sans",sans-serif!important;
-  padding:9px 11px!important;
-  white-space:normal;
+  font:600 12px/1.2 "DM Sans",sans-serif!important;
+  padding:8px!important;
+  white-space:nowrap;
 }
 .stg-index-categories button:hover,
 .stg-index-categories button.active{
