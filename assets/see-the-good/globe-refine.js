@@ -85,21 +85,14 @@
       if(card.querySelector('.stg-project-card-media'))return;
       const title=card.querySelector('h4')?.textContent||'';
       const team=(card.querySelector('.stg-project-card-meta span:first-child')?.textContent||'').replace(/^Student team:\s*/,'').trim();
-      const photo=photos[title];
-      if(!photo&&!team)return;
+      const category=card.querySelector('.stg-project-card-category')?.textContent||'All projects';
       const media=document.createElement('div');
-      media.className='stg-project-card-media has-photo';
+      media.className='stg-project-card-media';
       const image=document.createElement('img');
-      image.src=photo?photo.src:'/api/project-image?team='+encodeURIComponent(team);
-      image.alt=photo?photo.alt:'';
+      image.src=categoryArtwork[category]||categoryArtwork['All projects'];
+      image.alt='';
       image.loading='lazy';
-      image.addEventListener('error',()=>{const category=card.querySelector('.stg-project-card-category')?.textContent||'All projects';const fallback=categoryArtwork[category]||categoryArtwork['All projects'];if(image.dataset.fallback||!fallback){media.remove();return;}image.dataset.fallback='true';image.src=fallback;},{once:false});
       media.appendChild(image);
-      if(photo){
-        const credit=document.createElement('span');
-        credit.className='stg-project-card-credit'; credit.textContent=photo.credit;
-        media.appendChild(credit);
-      }
       card.prepend(media);
       const action=card.querySelector('.stg-project-card-toggle');
       if(action&&team){
