@@ -16,9 +16,9 @@
 .stg-front-runners-header{
   display:grid;
   grid-template-columns:1fr;
-  gap:28px;
+  gap:18px;
   align-items:start;
-  margin:0 0 34px;
+  margin:0 0 20px;
 }
 .stg-index-eyebrow,
 .stg-project-card-category,
