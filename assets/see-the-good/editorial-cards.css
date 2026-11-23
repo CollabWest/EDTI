@@ -118,3 +118,74 @@
   .stg-project-list .stg-project-card:first-child{grid-template-rows:auto auto auto auto minmax(0,1fr) auto}
 }
 @media(max-width:600px){.stg-project-list .stg-project-card-tagline{margin-left:1.1rem;margin-right:1.1rem}}
+
+
+/* Category-led Front Runners: one clear editorial image and introduction before the collection. */
+.stg-project-list .stg-category-gallery{
+  display:grid;
+  grid-template-columns:minmax(0,1.04fr) minmax(320px,.96fr);
+  height:auto;
+  min-height:360px;
+  margin:2rem 0 1.55rem;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--stg-line);
+}
+.stg-project-list .stg-category-gallery-visual{
+  min-height:360px;
+  overflow:hidden;
+  background:#e8ecef;
+}
+.stg-project-list .stg-category-gallery-visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.stg-project-list .stg-category-gallery-copy{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:flex-start;
+  padding:clamp(2rem,4vw,4.4rem);
+  background:#fff;
+}
+.stg-project-list .stg-category-gallery-eyebrow{
+  position:static;
+  margin:0 0 .8rem;
+  color:var(--stg-blue);
+  font:700 .7rem/1 var(--stg-sans);
+  letter-spacing:.12em;
+  text-shadow:none;
+  text-transform:uppercase;
+}
+.stg-project-list .stg-category-gallery h4{
+  margin:0;
+  color:var(--stg-deep);
+  font:600 clamp(2.5rem,4.4vw,4.9rem)/.95 var(--stg-serif);
+}
+.stg-project-list .stg-category-gallery-description{
+  position:static;
+  max-width:34rem;
+  margin:1.15rem 0 0;
+  color:var(--stg-deep);
+  font:400 1.05rem/1.5 var(--stg-sans);
+  text-shadow:none;
+  text-transform:none;
+}
+.stg-project-list .stg-category-gallery-count{
+  position:static;
+  margin:1.4rem 0 0;
+  color:var(--stg-blue);
+  font:700 .7rem/1 var(--stg-sans);
+  letter-spacing:.1em;
+  text-shadow:none;
+  text-transform:uppercase;
+}
+.stg-project-list .stg-index-categories{margin-top:1.2rem}
+@media(max-width:760px){
+  .stg-project-list .stg-category-gallery{grid-template-columns:1fr;min-height:0}
+  .stg-project-list .stg-category-gallery-visual{min-height:240px}
+  .stg-project-list .stg-category-gallery-copy{padding:2rem 1.35rem 2.2rem}
+  .stg-project-list .stg-category-gallery h4{font-size:2.6rem}
+}
