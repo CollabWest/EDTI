@@ -38,7 +38,7 @@
 .stg-index-intro{display:none!important}
 .stg-index-categories{
   display:grid!important;
-  grid-template-columns:repeat(6,max-content)!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
   align-items:stretch;
   gap:8px!important;
   min-width:0;
@@ -46,8 +46,7 @@
   padding:0!important;
 }
 .stg-index-categories button{
-  flex:0 0 auto;
-  min-width:max-content;
+  min-width:0;
   appearance:none;
   border:1px solid #d9ddec!important;
   border-radius:0!important;
@@ -56,7 +55,7 @@
   cursor:pointer;
   font:600 13.5px/1.2 "DM Sans",sans-serif!important;
   padding:9px 11px!important;
-  white-space:nowrap;
+  white-space:normal;
 }
 .stg-index-categories button:hover,
 .stg-index-categories button.active{
@@ -219,10 +218,11 @@
 @media(max-width:1050px){
   .stg-front-runners-header{grid-template-columns:1fr;gap:22px}
   .stg-project-chips{grid-template-columns:repeat(2,minmax(0,1fr))!important}
-  .stg-index-categories{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;overflow-y:hidden!important;padding:0 0 4px!important}
-  .stg-index-categories button{flex:0 0 auto}
+  .stg-index-categories{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;overflow:visible!important;padding:0!important}
+  .stg-index-categories button{min-width:0}
 }
 @media(max-width:760px){
+  .stg-index-categories{grid-template-columns:repeat(2,minmax(0,1fr))!important}
   .stg-project-list-inner{padding:32px 16px 52px!important}
   .stg-front-runners-header{margin-bottom:24px}
   .stg-category-gallery{grid-template-columns:1fr!important;min-height:0!important}
