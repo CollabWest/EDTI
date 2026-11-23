@@ -38,7 +38,7 @@
 .stg-index-intro{display:none!important}
 .stg-index-categories{
   display:grid!important;
-  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
   align-items:stretch;
   gap:8px!important;
   min-width:0;
