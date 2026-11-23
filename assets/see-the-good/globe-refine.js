@@ -93,7 +93,7 @@
       image.src=photo?photo.src:'/api/project-image?team='+encodeURIComponent(team);
       image.alt=photo?photo.alt:'';
       image.loading='lazy';
-      image.addEventListener('error',()=>media.remove(),{once:true});
+      image.addEventListener('error',()=>{const category=card.querySelector('.stg-project-card-category')?.textContent||'All projects';const fallback=categoryArtwork[category]||categoryArtwork['All projects'];if(image.dataset.fallback||!fallback){media.remove();return;}image.dataset.fallback='true';image.src=fallback;},{once:false});
       media.appendChild(image);
       if(photo){
         const credit=document.createElement('span');
