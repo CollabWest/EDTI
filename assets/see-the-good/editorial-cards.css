@@ -251,3 +251,72 @@
   .stg-project-list .stg-project-chips{grid-template-columns:1fr;gap:1.1rem}
   .stg-project-list .stg-project-card-media{height:220px!important;min-height:220px}
 }
+
+/* Exact typography and controls from the approved Front Runners study. */
+.stg-project-list .stg-index-eyebrow,
+.stg-project-list .stg-project-card-category{
+  color:#280ef3!important;
+  font:600 12px/1 "DM Mono",monospace!important;
+  letter-spacing:.12em!important;
+}
+.stg-project-list h3{
+  color:#170854!important;
+  font:600 clamp(2.15rem,4vw,3.75rem)/1 "Playfair Display",serif!important;
+}
+.stg-project-list .stg-index-intro,
+.stg-project-list .stg-project-card-summary{
+  color:#170854!important;
+  font-family:"DM Sans",sans-serif!important;
+}
+.stg-project-list .stg-index-categories{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:1.6rem 0 0!important;
+}
+.stg-project-list .stg-index-categories button{
+  appearance:none;
+  border:1px solid #d9ddec!important;
+  border-radius:0!important;
+  background:#fff!important;
+  color:#170854!important;
+  font:600 1rem/1.2 "DM Sans",sans-serif!important;
+  padding:12px 16px!important;
+}
+.stg-project-list .stg-index-categories button:hover,
+.stg-project-list .stg-index-categories button.active{
+  border-color:#280ef3!important;
+  background:#fff!important;
+  color:#280ef3!important;
+  box-shadow:inset 0 -4px #280ef3!important;
+}
+.stg-project-list .stg-project-card-tagline{
+  display:inline-block!important;
+  width:max-content;
+  max-width:calc(100% - 2.7rem);
+  padding:5px 8px;
+  background:#d8fbef;
+  color:#170854!important;
+  font:700 .75rem/1.25 "DM Sans",sans-serif!important;
+  letter-spacing:0!important;
+  white-space:normal;
+}
+.stg-project-list .stg-project-card-toggle{
+  border:1px solid #280ef3!important;
+  border-radius:0!important;
+  background:#fff!important;
+  color:#280ef3!important;
+  font:700 1rem/1 "DM Sans",sans-serif!important;
+  padding:12px 14px!important;
+}
+.stg-project-list .stg-project-card-toggle:hover{
+  background:#280ef3!important;
+  color:#fff!important;
+}
+.stg-project-list .stg-project-card-meta{
+  color:#5b6078!important;
+  font:400 1rem/1.35 "DM Sans",sans-serif!important;
+}
+@media(max-width:760px){
+  .stg-project-list .stg-index-categories button{font-size:.92rem;padding:10px 12px!important}
+}
