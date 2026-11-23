@@ -58,9 +58,6 @@
     visual.appendChild(image);
     const copy=document.createElement('div');
     copy.className='stg-category-gallery-copy';
-    const eyebrow=document.createElement('p');
-    eyebrow.className='stg-category-gallery-eyebrow';
-    eyebrow.textContent='Project category';
     const title=document.createElement('h4');
     title.textContent=category==='All projects'?'All Front Runners':category;
     const description=document.createElement('p');
@@ -70,7 +67,7 @@
     count.className='stg-category-gallery-count';
     const visible=[...index.querySelectorAll('.stg-project-card:not([hidden])')].length;
     count.textContent=visible+' project'+(visible===1?'':'s')+' in this selection';
-    copy.append(eyebrow,title,description,count);
+    copy.append(title,description,count);
     gallery.replaceChildren(visual,copy);
   }
 
