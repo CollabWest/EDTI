@@ -11,6 +11,16 @@
       credit:'Spectrum News / Jo Kwon'
     }
   };
+  const categoryCopy={
+    'All projects':'A wide-angle view of the young people building the future—across classrooms, communities, and countries.',
+    'Accessibility & Care':'Young people using technology to make the world easier to move through, hear, understand, and belong in.',
+    'Health & Science':'Students putting curiosity, care, and emerging technology to work on urgent health questions.',
+    'Climate & Environment':'Student builders turning their attention toward the planet, from agricultural tools to better ways to reuse.',
+    'Community Problem-Solvers':'Projects that start with a practical local need, then build toward a solution.',
+    'Reinventing Learning':'Students reimagining what learning can be—and who gets to shape it.',
+    'Student Voice & Agency':'Students bringing their lived experience and ideas into the decisions that shape their schools.',
+    'Creativity & Storytelling':'Young people using AI to make, preserve, and share the stories that matter to them.'
+  };
   const categoryArtwork={
     'All projects':'/assets/see-the-good/category-all-projects.svg',
     'Accessibility & Care':'/assets/see-the-good/category-accessibility-care.svg',
@@ -41,11 +51,27 @@
       return;
     }
     gallery.hidden=false;
+    const visual=document.createElement('div');
+    visual.className='stg-category-gallery-visual';
     const image=document.createElement('img');
     image.src=src; image.alt='';
-    const label=document.createElement('p');
-    label.textContent=category;
-    gallery.replaceChildren(image,label);
+    visual.appendChild(image);
+    const copy=document.createElement('div');
+    copy.className='stg-category-gallery-copy';
+    const eyebrow=document.createElement('p');
+    eyebrow.className='stg-category-gallery-eyebrow';
+    eyebrow.textContent='Project category';
+    const title=document.createElement('h4');
+    title.textContent=category==='All projects'?'All Front Runners':category;
+    const description=document.createElement('p');
+    description.className='stg-category-gallery-description';
+    description.textContent=categoryCopy[category]||'Explore the students and ideas in this collection.';
+    const count=document.createElement('p');
+    count.className='stg-category-gallery-count';
+    const visible=[...index.querySelectorAll('.stg-project-card:not([hidden])')].length;
+    count.textContent=visible+' project'+(visible===1?'':'s')+' in this selection';
+    copy.append(eyebrow,title,description,count);
+    gallery.replaceChildren(visual,copy);
   }
 
   document.querySelector('[data-stg-index-categories]')?.addEventListener('click',event=>{
