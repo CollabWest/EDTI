@@ -320,3 +320,73 @@
 @media(max-width:760px){
   .stg-project-list .stg-index-categories button{font-size:.92rem;padding:10px 12px!important}
 }
+
+/* Pixel-match the approved study’s category feature and project-card type scale. */
+.stg-project-list .stg-category-gallery{
+  min-height:385px!important;
+  grid-template-columns:1.08fr .92fr!important;
+  box-shadow:none!important;
+}
+.stg-project-list .stg-category-gallery:after{display:none!important}
+.stg-project-list .stg-category-gallery-visual{min-height:385px!important}
+.stg-project-list .stg-category-gallery-copy{padding:42px!important;box-shadow:none!important}
+.stg-project-list .stg-category-gallery h4{
+  font:600 clamp(42px,5vw,70px)/.92 "Playfair Display",serif!important;
+  font-weight:600!important;
+  letter-spacing:0!important;
+  text-shadow:none!important;
+}
+.stg-project-list .stg-category-gallery-description{
+  margin-top:1.15rem!important;
+  color:#170854!important;
+  font:400 18px/1.45 "DM Sans",sans-serif!important;
+  text-shadow:none!important;
+}
+.stg-project-list .stg-category-gallery-count{margin-top:24px!important}
+.stg-project-list .stg-index-categories{gap:8px!important;margin:1.25rem 0 0!important}
+.stg-project-list .stg-index-categories button{
+  font:600 16px/1.2 "DM Sans",sans-serif!important;
+  padding:10px 14px!important;
+}
+.stg-project-list .stg-project-card-category{
+  margin:0 18px 10px!important;
+  font:600 12px/1 "DM Mono",monospace!important;
+  letter-spacing:.12em!important;
+}
+.stg-project-list .stg-project-card h4,
+.stg-project-list .stg-project-card:first-child h4{
+  margin:10px 18px 0!important;
+  color:#170854!important;
+  font:600 28px/1 "Playfair Display",serif!important;
+  letter-spacing:0!important;
+}
+.stg-project-list .stg-project-card-meta{
+  margin:9px 18px 0!important;
+  color:#5b6078!important;
+  font:400 14px/1.35 "DM Sans",sans-serif!important;
+}
+.stg-project-list .stg-project-card-summary{
+  margin:10px 18px 14px!important;
+  color:#170854!important;
+  font:400 15px/1.38 "DM Sans",sans-serif!important;
+}
+.stg-project-list .stg-project-card-tagline{
+  margin:0 18px 14px!important;
+  padding:5px 8px!important;
+  color:#170854!important;
+  font:700 12px/1.25 "DM Sans",sans-serif!important;
+}
+.stg-project-list .stg-project-card-toggle{
+  min-height:0!important;
+  margin:0 18px!important;
+  padding:9px 12px!important;
+  color:#280ef3!important;
+  font:700 16px/1 "DM Sans",sans-serif!important;
+  box-shadow:none!important;
+}
+@media(max-width:760px){
+  .stg-project-list .stg-category-gallery{grid-template-columns:1fr!important;min-height:0!important}
+  .stg-project-list .stg-category-gallery-visual{min-height:240px!important}
+  .stg-project-list .stg-category-gallery-copy{padding:28px!important}
+  .stg-project-list .stg-category-gallery h4{font-size:42px!important}
+}
