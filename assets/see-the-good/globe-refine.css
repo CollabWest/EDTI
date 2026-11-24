@@ -143,3 +143,19 @@
 .stg-map-key .stg-pin-key:before{content:'';display:inline-block;width:11px;height:11px;margin-right:.42rem;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#7397f5}
 .stg-map-key .stg-pin-key--top:before{background:#280ef3}
 @media(max-width:620px){.stg-map-key{gap:.65rem}.stg-map-key .stg-pin-key{font-size:.74rem}}
+
+.stg-globe-popup-link{
+  display:inline-flex;
+  align-items:center;
+  margin-top:1rem;
+  border:1px solid var(--stg-blue);
+  padding:.48rem .72rem;
+  color:var(--stg-blue);
+  font:700 .76rem/1 var(--stg-sans);
+  text-decoration:none;
+}
+.stg-globe-popup-link:hover,
+.stg-globe-popup-link:focus-visible{
+  background:var(--stg-blue);
+  color:#fff;
+}
