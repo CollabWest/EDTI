@@ -58,8 +58,11 @@
     visual.appendChild(image);
     const copy=document.createElement('div');
     copy.className='stg-category-gallery-copy';
+    const eyebrow=document.createElement('p');
+    eyebrow.className='stg-category-gallery-eyebrow';
+    eyebrow.textContent='Meet the students';
     const title=document.createElement('h4');
-    title.textContent=category==='All projects'?'100 Impactful Projects':category;
+    title.textContent=category==='All projects'?'100 Projects Worth Knowing':category;
     const description=document.createElement('p');
     description.className='stg-category-gallery-description';
     description.textContent=categoryCopy[category]||'Explore the students and ideas in this collection.';
@@ -67,7 +70,7 @@
     count.className='stg-category-gallery-count';
     const visible=[...index.querySelectorAll('.stg-project-card:not([hidden])')].length;
     count.textContent=visible+' project'+(visible===1?'':'s')+' in this selection';
-    copy.append(title,description,count);
+    if(category==='All projects')copy.append(eyebrow);    copy.append(title,description,count);
     gallery.replaceChildren(visual,copy);
   }
 
