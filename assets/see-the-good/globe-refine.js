@@ -59,7 +59,7 @@
     const copy=document.createElement('div');
     copy.className='stg-category-gallery-copy';
     const title=document.createElement('h4');
-    title.textContent=category==='All projects'?'All Front Runners':category;
+    title.textContent=category==='All projects'?'100 Impactful Projects':category;
     const description=document.createElement('p');
     description.className='stg-category-gallery-description';
     description.textContent=categoryCopy[category]||'Explore the students and ideas in this collection.';
@@ -98,7 +98,7 @@
         visit.href='/api/project-image?team='+encodeURIComponent(team)+'&destination=source';
         visit.target='_blank';
         visit.rel='noopener noreferrer';
-        visit.textContent='Visit their site ↗';
+        visit.textContent='Learn more';
         action.replaceWith(visit);
       }
     });
