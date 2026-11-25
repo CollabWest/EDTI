@@ -84,12 +84,13 @@
     [...index.querySelectorAll('.stg-project-card')].forEach(card=>{
       if(card.querySelector('.stg-project-card-media'))return;
       const title=card.querySelector('h4')?.textContent||'';
+      const sourceImage=card.dataset.imageSrc||'';
       const team=(card.querySelector('.stg-project-card-meta span:first-child')?.textContent||'').replace(/^Student team:\s*/,'').trim();
       const category=card.querySelector('.stg-project-card-category')?.textContent||'All projects';
       const media=document.createElement('div');
       media.className='stg-project-card-media';
       const image=document.createElement('img');
-      image.src=categoryArtwork[category]||categoryArtwork['All projects'];
+      image.src=sourceImage||categoryArtwork[category]||categoryArtwork['All projects'];
       image.alt='';
       image.loading='lazy';
       media.appendChild(image);
