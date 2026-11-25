@@ -233,3 +233,14 @@
   .stg-project-chips{grid-template-columns:1fr!important;gap:18px!important;margin-top:24px!important}
   .stg-project-card-media{height:220px!important;min-height:220px!important}
 }
+/* Keep the Meet the students eyebrow in the copy panel, not over the image. */
+.stg-category-gallery-copy .stg-category-gallery-eyebrow{
+  position:static!important;
+  left:auto!important;
+  bottom:auto!important;
+  display:block!important;
+  margin:0!important;
+  color:#280ef3!important;
+  text-shadow:none!important;
+  filter:none!important;
+}
