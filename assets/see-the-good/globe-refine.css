@@ -141,7 +141,7 @@
 .stg-map-key{display:inline-flex;align-items:center;gap:1rem;flex-wrap:wrap}
 .stg-map-key .stg-pin-key{display:inline-flex;align-items:center;font-weight:600}
 .stg-map-key .stg-pin-key:before{content:'';display:inline-block;width:11px;height:11px;margin-right:.42rem;border-radius:50% 50% 50% 0;transform:rotate(-45deg);background:#7397f5}
-.stg-map-key .stg-pin-key--top:before{background:#280ef3}
+.stg-map-key .stg-pin-key--top:before{background:#f26c34}
 @media(max-width:620px){.stg-map-key{gap:.65rem}.stg-map-key .stg-pin-key{font-size:.74rem}}
 
 .stg-globe-popup-link{
