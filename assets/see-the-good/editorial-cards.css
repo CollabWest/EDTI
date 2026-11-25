@@ -169,8 +169,8 @@
   color:#5b6078!important;
   font:400 14px/1.35 "DM Sans",sans-serif!important;
 }
-.stg-project-card-meta span{display:inline!important}
-.stg-project-card-meta span+span:before{content:' · '}
+ .stg-project-card-meta span{display:block!important}
+ .stg-project-card-meta span+span:before{content:''}
 .stg-project-card-summary,
 .stg-project-card:first-child .stg-project-card-summary{
   margin:10px 18px 14px!important;
